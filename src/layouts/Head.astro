@@ -1,0 +1,77 @@
+---
+interface HeadProps {
+  seo?: {
+    title?: string;
+    description?: string;
+    keywords?: string;
+    canonical?: string;
+    image?: string;
+    type?: string;
+    themeColor?: string;
+  };
+  title?: string; // overrides seo.title
+}
+
+const { seo = {}, title } = Astro.props as HeadProps;
+
+// Fallback to the prop title if present, otherwise use seo.title
+const finalTitle = title ?? seo.title;
+---
+
+<head>
+  {finalTitle && <title>{finalTitle}</title>}
+  {seo.description && <meta name="description" content={seo.description} />}
+  {seo.keywords && <meta name="keywords" content={seo.keywords} />}
+  {seo.canonical && <link rel="canonical" href={seo.canonical} />}
+  {seo.image && <meta property="og:image" content={seo.image} />}
+  {seo.type && <meta property="og:type" content={seo.type} />}
+  {seo.themeColor && <meta name="theme-color" content={seo.themeColor} />}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content={Astro.generator} />
+  <link
+  rel="icon" type="image/x-icon" href=/favicons/1741919315274_bubble-green-fav.ico /> 
+<script>
+  import { showToast } from "../components/toast";
+  (() => {
+    const els = [...document.querySelectorAll("form")];
+    if (!els?.length) return;
+    els.forEach((el) => {
+      console.log("Test 1");
+      el.addEventListener("submit", async (e) => {
+        console.log("Test 2");
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const formObject = Object.fromEntries(formData);
+        formObject.emailUser = "quangnhat249@gmail.com";
+        console.log("formObject", formObject);
+        console.log("Test 3");
+        try {
+          console.log("Test 4");
+          const response = await fetch(
+            "https://app.ecobuilder.io/api/send-mail-contact",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(formObject),
+            }
+          );
+          console.log("Test 5");
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          console.log("Test 6");
+          const result = await response.json();
+          showToast("Merci, votre demande a été envoyée.");
+          console.log("Form submitted successfully:", result);
+        } catch (error) {
+          console.error("Error submitting form:", error);
+          showToast("Erreur lors de la soumission du formulaire", "error");
+        }
+      });
+    });
+  })();
+</script>
+</head>

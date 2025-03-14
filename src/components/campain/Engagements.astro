@@ -1,0 +1,118 @@
+---
+import { Image } from "astro:assets";
+import EngagementItem from "./EngagementItem.astro";
+import { engagement_image_1, engagement_image_2 } from "../../generated/images";
+// import imgimages_gii_logo_webp from "../../public/images/gii_logo_square.svg";
+---
+
+<section
+  id="engagement"
+  class="bg-[#243946] py-10 md:py-36 relative px-4 text-white"
+>
+  <div class="container mx-auto md:gap-10 text-center flex flex-col gap-8">
+    <h2 class="font-bold text-4xl md:text-[50px] leading-[1.5]">
+      Nos engagements
+    </h2>
+    <span class="mx-auto">
+      <svg
+        width="26"
+        height="105"
+        viewBox="0 0 26 105"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="13.5"
+          y1="1.05621"
+          x2="13.5"
+          y2="91.0562"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-dasharray="10 10"></line>
+        <circle cx="13" cy="91.5562" r="12.5" fill="#96F50A"></circle>
+      </svg>
+    </span>
+    <div class="flex flex-wrap xl:flex-nowrap gap-14 items-end">
+      <div class="flex flex-col gap-10 w-full xl:w-auto">
+        <EngagementItem number="1">
+          <p class="text-xl leading-[1.5] text-start">
+            <span class="font-bold"
+              >Une approche en éco-conception de A à Z garantie</span
+            >
+            (de l'UX au code) et évaluée via le standard européen d'éco- conception
+            de service numérique (RGESN), et Un Ecoscore de A garanti - Faites mieux
+            avec moins!
+          </p>
+        </EngagementItem>
+        <EngagementItem number="2">
+          <p class="text-xl leading-[1.5] text-start font-bold">
+            L'hébergement web le plus écologique en Europe
+          </p>
+          <ul class="pl-6 list-disc text-lg flex flex-col gap-2">
+            <li>
+              Des serveurs reconditionnées qui dépassent les 10 années de durée
+              de vie
+            </li>
+            <li>Une alimentation à 100% en Energie d'origine renouvelable</li>
+            <li>
+              Un refroidissement en natural cooling par géothermie inversé qui
+              n'utilise aucune climatisation et aucune
+            </li>consommation d'eau
+            <li>
+              Une infrastructure qui produit plus d'électricité qu'elle en
+              consomme grâce à un carénage de panneau
+            </li>photovoltaïque.
+            <li>
+              Pour les plus connaisseurs: un CUE de 0,062, un WUE de 0, et un
+              PUE de 1,23.
+            </li>
+          </ul>
+        </EngagementItem>
+        <EngagementItem number="3">
+          <p class="text-xl leading-[1.5] text-start">
+            <span class="font-bold">Un design soigné et efficace</span> pour attirer
+            et engager vos visiteurs.
+          </p>
+        </EngagementItem>
+      </div>
+      <div class="w-full xl:w-auto">
+        <Image
+        src={engagement_image_1}
+        width={442}
+        height={442}
+        class="mx-auto"
+        alt="Engagement Image 1"
+      />
+      </div>
+    </div>
+    <div class="flex flex-wrap xl:flex-nowrap gap-8 md:gap-36 items-center flex-row-reverse">
+      <div class="flex flex-col gap-10 w-full xl:w-auto">
+        <EngagementItem number="4">
+          <p class="text-xl leading-[1.5] text-start">
+            <span class="font-bold">Une navigation instantanée</span> - Une expérience fluide et agréable.
+          </p>
+        </EngagementItem>
+        <EngagementItem number="5">
+          <p class="text-xl leading-[1.5] text-start">
+            <span class="font-bold">Un référencent SEO optimal</span> - pour maximiser votre visibilité en ligne.
+          </p>
+        </EngagementItem>
+        <EngagementItem number="6">
+          <p class="text-xl leading-[1.5] text-start">
+            <span class="font-bold">Des performances web record</span> - Des scores page speed supérieur à 95/100 garantis qui offrent une navigation instantanée - Une expérience fluide et agréable.
+          </p>
+        </EngagementItem>
+      </div>
+      <div class="w-full xl:w-auto">
+        <Image
+        src={engagement_image_2}
+        width={439}
+        height={365}
+        class="mx-auto"
+        alt="Engagement Image 2"
+      />
+      </div>
+    </div>
+  </div>
+</section>

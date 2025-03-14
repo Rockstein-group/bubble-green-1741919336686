@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import {
+  campain_difference_1,
+  campain_difference_2,
+  campain_difference_3,
+  campain_difference_4,
+  campain_difference_5,
+  campain_difference_6,
+} from "../../generated/images";
+import DifferenceCard from "./DifferenceCard.astro";
+// import imgimages_gii_logo_webp from "../../public/images/gii_logo_square.svg";
+---
+
+<section id="campain-differences" class="bg-white pt-10 md:py-36 relative px-4">
+  <div class="container mx-auto text-black md:gap-10 text-center flex flex-col gap-8">
+    <div>
+      <h2 class="font-bold text-4xl md:text-[50px] leading-[1.5]">Quelles différences ?</h2>
+    <p class="font-medium text-2xl md:text-[30px] leading-[1.5]">par rapport à un site web standard....</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-6">
+      <DifferenceCard src={campain_difference_1} alt="Difference 1">
+        Des pages<br/>5 à 8 fois<br/>plus rapide
+      </DifferenceCard>
+      <DifferenceCard src={campain_difference_2} alt="Difference 2">
+        Une empreinte<br/>environnemental divisée par<br/>15
+      </DifferenceCard>
+      <DifferenceCard src={campain_difference_3} alt="Difference 3">
+        Un tunnel de<br/>conversion 3 fois plus<br/>efficace
+      </DifferenceCard>
+      <DifferenceCard src={campain_difference_4} alt="Difference 4">
+        Une conformité au<br/>standard<br/>d'accessibilité
+      </DifferenceCard>
+      <DifferenceCard src={campain_difference_5} alt="Difference 5">
+        Une image redorée<br/>en phase avec vos<br/>valeurs
+      </DifferenceCard>
+      <DifferenceCard src={campain_difference_6} alt="Difference 6">
+        Un référencement SEO<br/>efficace en quelques<br/>jours
+      </DifferenceCard>
+    </div>
+  </div>
+</section>

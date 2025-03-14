@@ -8,3 +8,57 @@ body > header,
 body > main {
   margin-bottom: 0 !important;
 }
+
+@theme {
+  --font-sans: "Inter", "sans-serif";
+}
+
+#video-player {
+  --plyr-color-main: #e11d48;
+}
+
+.plyr__control--overlaid {
+  @apply !bg-black/50;
+}
+
+/* Volume slider styling */
+input[type="range"].w-full {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+
+input[type="range"].w-full::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #111827;
+  cursor: pointer;
+  margin-top: -5px;
+}
+
+input[type="range"].w-full::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  background: #e5e7eb;
+  border-radius: 3px;
+}
+
+input[type="range"].w-full:focus {
+  outline: none;
+}
+
+.volume-slider-container {
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.plyr.plyr--full-ui {
+  @apply h-full;
+}
+
+/* .plyr__controls {
+  @apply !relative w-full flex justify-between order-1;
+} */

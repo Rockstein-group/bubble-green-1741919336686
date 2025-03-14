@@ -1,0 +1,66 @@
+---
+import { Image } from "astro:assets";
+// import imgimages_gii_logo_webp from "../../public/images/gii_logo_square.svg";
+import "../styles/global.css";
+---
+
+<footer class="bg-[#22252a] px-4">
+  <div class="container mx-auto">
+    <nav class="flex items-center justify-between flex-col lg:flex-row lg:gap-0 gap-6 py-10">
+      <!-- Logo -->
+      <div class="flex flex-col gap-6 w-full items-center lg:items-start lg:w-auto lg:px-0">
+        <p class="text-lg text-white">
+          Hosted by <a href="#" class="text-[#96F50A] inline-block relative before:content-[''] before:absolute before:h-[1px] before:left-0 before:right-0 before:bg-[#96F50A] before:bottom-[5px]">DigitalForest</a>
+        </p>
+        <div class="flex items-center gap-8">
+          <Image
+            src="/images/logo_digital_forst_certificate.webp"
+            alt="Digital Forest Certificate Logo"
+            width={86}
+            height={66}
+          />
+          <Image
+            src="/images/logo_green_hosting.webp"
+            alt="Green Hosting Logo"
+            width={136}
+            height={65}
+          />
+        </div>
+      </div>
+
+      <!-- Menu -->
+      <div  class="lg:px-0 md:w-[60%] lg:w-auto w-full">
+        <ul
+        class="flex space-x-4 md:space-x-6 lg:space-x-4 xl:space-x-6 justify-center lg:justify-start text-gray-700 py-[14px] bg-white rounded-full lg:px-6 xl:px-16 w-full"
+      >
+        <li>
+          <a href="/#vision" class="text-black text-base font-semibold">Vision</a>
+        </li>
+        <li>
+          <a href="/#mission" class="text-black text-base font-semibold">Mission</a>
+        </li>
+        <li>
+          <a href="/#solution" class="text-black text-base font-semibold">Solutions</a>
+        </li>
+        <li>
+          <a href="#" class="text-black text-base font-semibold">Références</a>
+        </li>
+      </ul>
+      </div>
+
+      <div class="flex flex-col gap-6 w-full lg:w-auto lg:px-0">
+        <Image
+          src="/images/logo_powered_by_bubble_go.svg"
+          alt="Powered by Bubble Green Logo"
+          class="self-center lg:self-end"
+          width={195}
+          height={53}
+        />
+        <p class="text-base text-white text-center lg:text-right leading-[2]">
+          Site web éco-conçu réalisé par Bubble Green - <br />Déclaration
+          environnementale - <a href="/mention-legale" class="text-white">Mention Légale</a>
+        </p>
+      </div>
+    </nav>
+  </div>
+</footer>

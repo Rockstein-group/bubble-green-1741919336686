@@ -1,0 +1,29 @@
+---
+import {
+campain_perfomance_1,
+campain_perfomance_2,
+campain_perfomance_3,
+} from "../../generated/images";
+import PerfomanceItem from "./PerfomanceItem.astro";
+---
+
+<section id="campain-perfomance" class="bg-white py-10 md:pt-20 md:pb-32 relative px-4">
+  <div class="max-2xl:max-w-[1072px] container mx-auto text-black md:gap-10 text-center flex flex-col gap-8">
+    <h2 class="text-start font-bold text-4xl md:text-[57px] leading-[1.5]">Ils ont choisis la performance...</h2>
+    <div class="grid md:grid-cols-3 grid-cols-1 gap-6">
+      <PerfomanceItem src={campain_perfomance_1} alt="Perfomance Image 1">
+        <p class="md:min-h-[140px]">“Grâce à l'expertise holistique en Green IT de Green Web, nous avons développé un outil digital performant tout en réduisant son empreinte écologique. Une collaboration fluide, efficace et porteuse de sens !”</p>
+        <p>Signé Jean-Edouard ROBERT (AKOA)</p>
+      </PerfomanceItem>
+      <PerfomanceItem src={campain_perfomance_2} alt="Perfomance Image 2">
+        <p class="md:min-h-[140px]">“Green Web, c’est l’allié idéal pour des services numériques alignés avec un numérique raisonné, intégrant pleinement les enjeux sociaux et environnementaux. Une collaboration de confiance, portée par une belle énergie!”</p>
+        <p>Elsa Baldan (Numibee)</p>
+      </PerfomanceItem>
+      <PerfomanceItem src={campain_perfomance_3} alt="Perfomance Image 3">
+        <p class="md:min-h-[140px]">“En quelques semaines, Green Web nous a conçu une plateforme en phase avec nos engagements, reflétant parfaitement nos valeurs et notre approche RSE. Efficacité et cohérence au rendez-vous !”
+        </p>
+        <p>Océane Chabardes (GAIACT network)</p>
+      </PerfomanceItem>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import EngagementItem from "./EngagementItem.astro";
+import { engagement_image_1, engagement_image_2 } from "../../generated/images";
+// import imgimages_gii_logo_webp from "../../public/images/gii_logo_square.svg";
+---
+
+<section
+  id="engagement"
+  class="bg-[#243946] pb-16 relative px-4 text-white"
+>
+  <div class="container mx-auto md:gap-10 text-center flex flex-col gap-9">
+    <h2 class="font-bold text-4xl md:text-[50px] leading-[1.5]">
+      En toute <span class="text-[#96F50A]">simplicité</span> 
+    </h2>
+    <p class="text-2xl md:text-3xl leading-[1.5] font-semibold">Nos équipes s'occupent de tout et en quelques jours c'est fait !</p>
+    <div class="rounded-3xl bg-white p-5 md:p-14">
+      <ul class="flex flex-col gap-4 text-center text-[#253946] text-xl md:text-2xl font-semibold">
+        <li>1 - Nous collectons vos besoins.</li>
+        <li>2 - Nous définissons ensemble vos parcours utilisateurs.</li>
+        <li>3 - Vous validez les maquettes.</li>
+        <li>4 - Nous réalisons et déployons votre site.</li>
+        <li>5 - En quelques jours, votre site est en ligne !</li>
+      </ul>
+    </div>
+    <p class="text-2xl md:text-3xl leading-[1.5] font-semibold">Je souhaite profiter de l'offre actuelle...</p>
+    <div class="mt-6">
+      <a
+        href="#"
+        class="bg-[#96F50A] font-bold text-[#262626] inline-flex px-12 py-2.5 rounded-full hover:bg-[#96F50A] text-sm"
+        >Let's go green</a
+      >
+    </div>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+---
+interface Props {
+  mainPage: string;
+  subPage: string;
+  mainLink?: string;
+  subLink?: string;
+}
+
+const { mainPage, subPage, mainLink = "#", subLink = "#" } = Astro.props;
+---
+
+<section
+  class=" container px-4 bg-white my-6 mx-auto w-full"
+  aria-label="Breadcrumb Section">
+  <div class="max-md:max-w-full" aria-label="Breadcrumb Wrapper">
+    <div
+      class="flex flex-wrap items-center justify-between gap-10 container mx-auto"
+      aria-label="Breadcrumb  container ">
+      <nav class="flex" aria-label="Breadcrumb Navigation">
+        <ol
+          class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse"
+          aria-label="Breadcrumb List">
+          <li
+            class="inline-flex items-center"
+            aria-label="Breadcrumb Home Item">
+            <a
+              href={mainLink}
+              class="inline-flex items-center text-sm font-medium text-[#243544]"
+              aria-label="Home Link">
+              {mainPage.toUpperCase()}
+            </a>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+            
+          </li>
+          <li class="flex items-center" aria-label="Breadcrumb Sub Page">
+            <a
+              href={subLink}
+              class="text-sm font-medium !text-[#243544]"
+              aria-label="Sub Page Text">
+              {subPage.toUpperCase()}
+            </a>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+</section>

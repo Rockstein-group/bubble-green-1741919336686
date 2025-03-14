@@ -1,0 +1,30 @@
+---
+const { number, title } = Astro.props;
+---
+
+<details open class="group overflow-hidden shadow-sm text-white border-b border-solid border-white">
+  <summary class="flex w-full items-center justify-between py-6 text-left focus:outline-none cursor-pointer !bg-transparent">
+    <div class="flex items-center space-x-6 w-full">
+      <h3 class="text-[32px] leading-[1.5] font-bold text-[#96F50A]">#{number}</h3>
+      <h4 class="text-3xl md:text-[32px] leading-[1.5] font-semibold">{title}</h4>
+      <div class="group-open:hidden !ml-auto flex-shrink-0">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" fill="white" fill-opacity="0.1"></rect>
+          <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="white"></rect>
+          <path d="M10 20H30" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M20 30V10" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <div class="hidden group-open:block !ml-auto flex-shrink-0">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" fill="white" fill-opacity="0.1"></rect>
+          <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="white"></rect>
+          <path d="M10 20H30" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+    </div>
+  </summary>
+  <div class="px-6 py-8 ml-0 lg:ml-28">
+    <slot />
+  </div>
+</details>

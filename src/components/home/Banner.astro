@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+// import imgimages_gii_logo_webp from "../../public/images/gii_logo_square.svg";
+---
+<section id="vision" class="bg-[#243946] pt-10 pb-28 md:pt-32 md:pb-44 lg:pb-96 relative px-4">
+  <div class="container mx-auto text-center flex flex-col text-white gap-14 md:gap-24">
+    <h1 class="text-4xl leading-[1.5] md:text-6xl md:leading-[84px] font-bold">Nous oeuvrons pour un numérique plus <span class="text-[#96f509]">éthique</span>, <span class="text-[#96f509]">souverain</span> et <span class="text-[#96f509]">écologique</span>...</h1>
+    <span class="mx-auto">
+      <svg width="26" height="105" viewBox="0 0 26 105" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="13.5" y1="1.05621" x2="13.5" y2="91.0562" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="10 10"/>
+        <circle cx="13" cy="91.5562" r="12.5" fill="#96F50A"/>
+        </svg>
+    </span>
+    <h2 class="font-bold text-3xl leading-[1.5] md:text-[40px] md:leading-[40px]">Car l'empreinte du numérique explose... </h2>
+    <Image 
+      src="/images/home_banner.svg"
+      alt="Home Banner"
+      width={890}
+      height={256}
+      class="mx-auto"
+    />
+  </div>
+  <Image 
+      src="/images/home_bottom_decor.svg"
+      alt="Home Banner"
+      width={1440}
+      height={373}
+      class="mx-auto w-full absolute -bottom-[3px] left-0 right-0"
+    />
+</section>

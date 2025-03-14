@@ -1,0 +1,308 @@
+---
+import "plyr/dist/plyr.css";
+---
+
+<div id="video-player" class="h-[95%]">
+  <video id="player" playsinline>
+    <source src="/video/sample_video.mp4" type="video/mp4" />
+  </video>
+</div>
+
+<!-- Custom Controls -->
+<div
+  class="custom-controls text-[#111827] flex items-center justify-between gap-2 pt-6"
+>
+  <div class="flex items-center gap-2 md:gap-4">
+    <button
+      class="w-[26px] h-[26px] flex items-center justify-center transition-all hover:bg-black/10 rounded"
+      id="rewind"
+    >
+      <svg
+        width="21"
+        height="20"
+        viewBox="0 0 21 20"
+        class="w-5 h-5"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M1.39307 2.98328V8.44762M1.39307 8.44762H6.8574M1.39307 8.44762L5.61882 4.47687C6.87645 3.22136 8.50804 2.40859 10.2678 2.16101C12.0275 1.91342 13.82 2.24444 15.3752 3.10419C16.9305 3.96394 18.1642 5.30585 18.8904 6.92771C19.6167 8.54958 19.7962 10.3635 19.4019 12.0963C19.0076 13.8291 18.0608 15.3867 16.7043 16.5346C15.3477 17.6825 13.6548 18.3584 11.8807 18.4605C10.1066 18.5626 8.34733 18.0854 6.86802 17.1007C5.38871 16.1161 4.26949 14.6773 3.67898 13.0012"
+          stroke="#111827"
+          stroke-width="2.73217"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+    </button>
+    <button
+      class="w-[26px] h-[26px] flex items-center justify-center transition-all hover:bg-black/10 rounded"
+      id="play-pause"
+    >
+      <svg
+        width="18"
+        height="21"
+        viewBox="0 0 18 21"
+        class="w-5 h-5"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M1.93262 1.39844L15.7453 10.278L1.93262 19.1576V1.39844Z"
+          fill="#111827"
+          stroke="#111827"
+          stroke-width="2.73217"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+    </button>
+    <button
+      class="w-[26px] h-[26px] flex items-center justify-center transition-all hover:bg-black/10 rounded"
+      id="fast-forward"
+    >
+      <svg
+        width="22"
+        height="20"
+        viewBox="0 0 22 20"
+        class="w-5 h-5"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M20.2821 2.99001V8.45435M20.2821 8.45435H14.8177M20.2821 8.45435L16.0654 4.4836C14.8092 3.22656 13.1784 2.41187 11.4189 2.16229C9.65934 1.91272 7.86635 2.24177 6.31009 3.09988C4.75383 3.95799 3.51863 5.29865 2.79061 6.91984C2.06259 8.54104 1.8812 10.3549 2.27378 12.0882C2.66635 13.8214 3.61162 15.3801 4.96714 16.5294C6.32266 17.6787 8.01499 18.3563 9.78911 18.4601C11.5632 18.5639 13.323 18.0882 14.8033 17.1049C16.2836 16.1215 17.4042 14.6836 17.9962 13.008"
+          stroke="#111827"
+          stroke-width="2.73217"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+    </button>
+    <span class="flex items-center gap-2 text-sm">
+      <span id="current-time">0:00</span>/<span id="total-time">0:00</span>
+    </span>
+  </div>
+  <div class="flex items-center gap-3 md:gap-6">
+    <button
+      class="w-[26px] h-[26px] flex items-center justify-center transition-all hover:bg-black/10 rounded"
+      id="toggle-video"
+    >
+    <svg width="194" height="181" viewBox="0 0 194 181" class="w-5 h-5" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3.20033 2.05053C1.86699 3.38386 0.666992 5.25053 0.666992 5.9172C0.666992 6.7172 6.40033 13.5172 13.3337 21.1172C20.267 28.7172 26.0003 35.2505 26.0003 35.5172C26.0003 35.6505 22.0003 36.0505 17.067 36.1839C9.46699 36.4505 7.73366 36.9839 4.80033 39.9172L1.33366 43.2505V90.0505V136.851L5.73366 140.717L10.0003 144.584H69.067H128.134L144 161.917C152.667 171.384 161.067 179.651 162.4 180.051C166.134 181.251 170.8 176.184 169.2 172.717C167.2 168.317 10.9337 0.850532 8.26699 0.0505316C6.93366 -0.216135 4.66699 0.583865 3.20033 2.05053Z" fill="black"/>
+      <path d="M59.6004 36.718C60.267 38.1846 143.734 127.918 144.934 128.318C145.467 128.585 146 125.785 146 122.051C146 118.318 146.267 115.251 146.667 115.251C147.067 115.251 155.734 119.385 166 124.585C176.267 129.651 185.734 133.918 187.2 133.918C193.734 133.918 194 132.451 194 90.8513C194 57.6513 193.734 51.3846 191.867 48.8513C190.8 47.2513 188.934 45.918 187.867 45.918C186.8 45.918 177.067 50.4513 166.134 55.918L146.267 65.7846L145.867 54.5846C145.334 44.5846 144.934 42.8513 142 39.918L138.534 36.5846L98.9337 36.1846C77.2004 36.0513 59.467 36.318 59.6004 36.718Z" fill="black"/>
+      </svg>
+    </button>
+    <button
+      class="w-[26px] h-[26px] flex items-center justify-center transition-all hover:bg-black/10 rounded"
+      id="volume-control"
+    >
+      <svg
+        width="23"
+        height="17"
+        viewBox="0 0 23 17"
+        class="w-5 h-5"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.2336 2.00122L5.40303 5.86568H1.53857V11.6624H5.40303L10.2336 15.5268V2.00122Z"
+          fill="#111827"></path>
+        <path
+          d="M18.0301 1.93359C19.8413 3.74533 20.8588 6.20223 20.8588 8.76402C20.8588 11.3258 19.8413 13.7827 18.0301 15.5944M14.6198 5.34398C15.5254 6.24984 16.0341 7.4783 16.0341 8.75919C16.0341 10.0401 15.5254 11.2685 14.6198 12.1744M10.2336 2.00122L5.40303 5.86568H1.53857V11.6624H5.40303L10.2336 15.5268V2.00122Z"
+          stroke="#111827"
+          stroke-width="2.73217"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+    </button>
+    <button
+      class="w-[26px] h-[26px] flex items-center justify-center transition-all hover:bg-black/10 rounded"
+      id="quality-control"
+    >
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 18 18"
+        class="w-5 h-5"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M17.6962 11.2635L16.1709 10.3827C16.3249 9.55205 16.3249 8.6999 16.1709 7.86924L17.6962 6.98845C17.8716 6.88819 17.9504 6.68053 17.8931 6.48718C17.4957 5.21254 16.819 4.05964 15.9346 3.10007C15.7985 2.95328 15.5766 2.91747 15.4047 3.01772L13.8794 3.89851C13.2385 3.34713 12.501 2.92105 11.7025 2.64178V0.883774C11.7025 0.683268 11.5629 0.507826 11.3659 0.464861C10.0519 0.171264 8.70567 0.185585 7.45609 0.464861C7.25917 0.507826 7.11953 0.683268 7.11953 0.883774V2.64536C6.32467 2.92821 5.5871 3.35429 4.94262 3.9021L3.42092 3.0213C3.24548 2.92105 3.02707 2.95328 2.89102 3.10365C2.00665 4.05964 1.32994 5.21254 0.932509 6.49076C0.871642 6.68411 0.953992 6.89177 1.12943 6.99203L2.65471 7.87282C2.50075 8.70348 2.50075 9.55563 2.65471 10.3863L1.12943 11.2671C0.953992 11.3673 0.875222 11.575 0.932509 11.7683C1.32994 13.043 2.00665 14.1959 2.89102 15.1555C3.02707 15.3023 3.24906 15.3381 3.42092 15.2378L4.9462 14.357C5.5871 14.9084 6.32467 15.3345 7.12311 15.6138V17.3753C7.12311 17.5758 7.26275 17.7513 7.45968 17.7943C8.7737 18.0878 10.12 18.0735 11.3695 17.7943C11.5665 17.7513 11.7061 17.5758 11.7061 17.3753V15.6138C12.501 15.3309 13.2385 14.9048 13.883 14.357L15.4083 15.2378C15.5837 15.3381 15.8021 15.3058 15.9382 15.1555C16.8226 14.1995 17.4993 13.0466 17.8967 11.7683C17.9504 11.5714 17.8716 11.3638 17.6962 11.2635ZM9.41102 11.9903C7.83204 11.9903 6.54666 10.705 6.54666 9.12598C6.54666 7.547 7.83204 6.26161 9.41102 6.26161C10.99 6.26161 12.2754 7.547 12.2754 9.12598C12.2754 10.705 10.99 11.9903 9.41102 11.9903Z"
+          fill="#111827"></path>
+      </svg>
+    </button>
+    <button
+      class="w-[26px] h-[26px] flex items-center justify-center transition-all hover:bg-black/10 rounded"
+      id="transcription-of-the-track-into-text"
+    >
+      <svg
+        width="19"
+        height="19"
+        viewBox="0 0 19 19"
+        class="w-5 h-5"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M2.79834 0.763672C1.68834 0.763672 0.79834 1.65367 0.79834 2.76367V16.7637C0.79834 17.8737 1.68834 18.7637 2.79834 18.7637H16.7983C17.9083 18.7637 18.7983 17.8737 18.7983 16.7637V2.76367C18.7983 1.65367 17.9083 0.763672 16.7983 0.763672H2.79834ZM2.79834 2.76367H16.7983V16.7637H2.79834V2.76367ZM4.79834 4.76367V6.76367H14.7983V4.76367H4.79834ZM4.79834 8.76367V10.7637H14.7983V8.76367H4.79834ZM4.79834 12.7637V14.7637H11.7983V12.7637H4.79834Z"
+          fill="black"></path>
+      </svg>
+    </button>
+    <button
+      class="w-[26px] h-[26px] flex items-center justify-center transition-all hover:bg-black/10 rounded"
+      id="fullscreen"
+    >
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        class="w-[18px] h-[18px]"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M10.0491 1.61719H14.1473M14.1473 1.61719V5.71544M14.1473 1.61719L9.36601 6.39849M5.9508 13.912H1.85254M1.85254 13.912V9.8137M1.85254 13.912L6.63384 9.13066"
+          stroke="#111827"
+          stroke-width="2.73217"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  import Plyr from "plyr";
+
+  document.addEventListener("astro:after-swap", () => {
+    setupPlyr();
+  });
+
+  function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
+  }
+
+  function setupPlyr() {
+    const player = new Plyr("#player", {
+      controls: ["play-large", "progress"],
+    });
+    let volumeSliderVisible = false;
+    let volumeContainer = null;
+    const videoEl = document.getElementById("player");
+    const volumeControlBtn = document.getElementById("volume-control");
+    const currentTimeEl = document.getElementById("current-time");
+    const toggleVideoEl = document.getElementById("toggle-video");
+    const totalTimeEl = document.getElementById("total-time");
+
+    const playPauseBtn = document.getElementById("play-pause");
+    const rewindBtn = document.getElementById("rewind");
+    const fastForwardBtn = document.getElementById("fast-forward");
+    const fullscreenBtn = document.getElementById("fullscreen");
+
+    player.on("loadedmetadata", () => {
+      const totalTime = document.getElementById("total-time");
+      const duration = player.duration;
+
+      if (!isNaN(duration) && duration > 0) {
+        totalTime.textContent = formatTime(duration);
+      }
+    });
+    player.on("timeupdate", () => {
+      currentTimeEl.textContent = formatTime(player.currentTime);
+    });
+
+    // Custom Controls
+    playPauseBtn.addEventListener("click", () => {
+      if (player.paused) {
+        player.play();
+      } else {
+        player.pause();
+      }
+      updatePlayPauseIcon();
+    });
+
+    function getPlayIcon() {
+      return `<svg width="18" height="21" viewBox="0 0 18 21" class="w-5 h-5" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.93262 1.39844L15.7453 10.278L1.93262 19.1576V1.39844Z" fill="#111827" stroke="#111827" stroke-width="2.73217" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    `;
+    }
+
+    function getPauseIcon() {
+      return `<svg width="18" height="21" viewBox="0 0 18 21" class="w-5 h-5" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2.93262 1.39844H6.93262V19.1576H2.93262V1.39844Z" fill="#111827" stroke="#111827" stroke-width="2.73217" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M11.9326 1.39844H15.9326V19.1576H11.9326V1.39844Z" fill="#111827" stroke="#111827" stroke-width="2.73217" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    `;
+    }
+
+    function getDisabledCameraIcon() {
+      return `<svg width="194" height="181" viewBox="0 0 194 181" class="w-5 h-5" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.20033 2.05053C1.86699 3.38386 0.666992 5.25053 0.666992 5.9172C0.666992 6.7172 6.40033 13.5172 13.3337 21.1172C20.267 28.7172 26.0003 35.2505 26.0003 35.5172C26.0003 35.6505 22.0003 36.0505 17.067 36.1839C9.46699 36.4505 7.73366 36.9839 4.80033 39.9172L1.33366 43.2505V90.0505V136.851L5.73366 140.717L10.0003 144.584H69.067H128.134L144 161.917C152.667 171.384 161.067 179.651 162.4 180.051C166.134 181.251 170.8 176.184 169.2 172.717C167.2 168.317 10.9337 0.850532 8.26699 0.0505316C6.93366 -0.216135 4.66699 0.583865 3.20033 2.05053Z" fill="black"/>
+<path d="M59.6004 36.718C60.267 38.1846 143.734 127.918 144.934 128.318C145.467 128.585 146 125.785 146 122.051C146 118.318 146.267 115.251 146.667 115.251C147.067 115.251 155.734 119.385 166 124.585C176.267 129.651 185.734 133.918 187.2 133.918C193.734 133.918 194 132.451 194 90.8513C194 57.6513 193.734 51.3846 191.867 48.8513C190.8 47.2513 188.934 45.918 187.867 45.918C186.8 45.918 177.067 50.4513 166.134 55.918L146.267 65.7846L145.867 54.5846C145.334 44.5846 144.934 42.8513 142 39.918L138.534 36.5846L98.9337 36.1846C77.2004 36.0513 59.467 36.318 59.6004 36.718Z" fill="black"/>
+</svg>`;
+    }
+
+    function getEnabledCameraIcon() {
+      return `<svg width="194" height="109" viewBox="0 0 194 109" fill="none" class="w-5 h-5" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.46667 4.71731L0 8.85065V53.384C0 101.784 0.266667 103.784 7.33333 106.984C9.86667 108.184 27.7333 108.584 73.3333 108.584H135.733L139.867 105.117C143.867 101.784 144 101.384 144 90.4507C144 83.784 144.533 79.2506 145.333 79.2506C146.133 79.2506 155.2 83.5173 165.467 88.7173C175.867 93.784 185.6 97.9173 187.067 97.6507C192.667 96.8507 193.333 92.7173 193.333 54.3173C193.333 34.4506 192.8 16.584 192.133 14.8506C189.733 8.58398 186.667 9.25065 165.467 19.9173C154.4 25.384 145.067 29.9173 144.667 29.9173C144.267 29.9173 144 24.584 144 18.184C144 -1.01602 150.4 0.583979 72.4 0.583979H6.93333L3.46667 4.71731Z" fill="black"/>
+</svg>
+`;
+    }
+
+    // Add this function to update the play/pause icon
+    function updatePlayPauseIcon() {
+      const playPauseBtn = document.getElementById("play-pause");
+
+      if (player.paused) {
+        // Show play icon
+        playPauseBtn.innerHTML = getPlayIcon();
+      } else {
+        // Show pause icon
+        playPauseBtn.innerHTML = getPauseIcon();
+      }
+    }
+
+    // Toggle Video
+    toggleVideoEl.addEventListener("click", () => {
+      videoEl.classList.toggle("opacity-0");
+      if (videoEl.classList.contains("opacity-0")) {
+        toggleVideoEl.innerHTML = getEnabledCameraIcon();
+    } else {
+      toggleVideoEl.innerHTML = getDisabledCameraIcon();
+    }
+    });
+
+    // Add these event listeners to sync the UI with player state
+    player.on("play", () => {
+      updatePlayPauseIcon();
+    });
+
+    player.on("pause", () => {
+      updatePlayPauseIcon();
+    });
+
+    // Initialize the icon state
+    updatePlayPauseIcon();
+
+    rewindBtn.addEventListener("click", () => {
+      player.rewind(10); // Rewind 10 seconds
+    });
+
+    fastForwardBtn.addEventListener("click", () => {
+      player.forward(10); // Fast forward 10 seconds
+    });
+
+    fullscreenBtn.addEventListener("click", () => {
+      player.fullscreen.toggle();
+    });
+  }
+
+  setupPlyr(); // Initialize on first load
+</script>
+
+<style>
+  #player {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+</style>

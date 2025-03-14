@@ -1,0 +1,24 @@
+---
+import Seo from "../components/Seo.astro";
+import "../styles/global.css";
+import MainLayout from "../layouts/MainLayout.astro";
+import Head from "../layouts/Head.astro";
+import Content from "../components/mention-legale/content.astro";
+
+const seo = {
+  title: "Bubble Green - Solutions Numériques Écoresponsables & Performantes",
+  description: "Bubble Green propose des solutions numériques écoresponsables et performantes pour un web durable. Optez pour une technologie plus verte dès aujourd'hui !",
+  keywords: "greenit, sustainable",
+  canonical: "https://greenitimpact.io",
+  image: "/images/gii_logo_seo.webp",
+  type: "website",
+  themeColor: "#ffffff",
+};
+---
+
+<html lang="en" class="overflow-x-hidden scroll-smooth">
+  <Head seo={seo} title="Bubble Green - Solutions Numériques Écoresponsables & Performantes" />
+  <MainLayout>
+    <Content />
+  </MainLayout>
+</html>

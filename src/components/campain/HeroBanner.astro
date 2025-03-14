@@ -1,0 +1,107 @@
+---
+import { Image } from "astro:assets";
+import {
+  campain_carousel_1,
+  campain_carousel_2,
+  campain_carousel_3,
+  campain_carousel_4,
+  ecobuilder_image,
+} from "../../generated/images";
+// import imgimages_gii_logo_webp from "../../public/images/gii_logo_square.svg";
+---
+
+<section id="campain-banner" class="bg-[#243946] py-10 md:py-28 relative px-4">
+  <div
+    class="container mx-auto text-center flex flex-col text-white gap-14 md:gap-20"
+  >
+    <h1 class="text-4xl leading-[1.5] md:text-6xl md:leading-[84px] font-bold">
+      Nous créons pour vous le site <span class="text-[#96f509]"
+        >web éco-conçu</span
+      > dont vous avez besoin, <span class="text-[#96f509]"
+        >à un prix inégalé !</span
+      >
+    </h1>
+    <span class="mx-auto">
+      <svg
+        width="26"
+        height="105"
+        viewBox="0 0 26 105"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="13.5"
+          y1="1.05621"
+          x2="13.5"
+          y2="91.0562"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-dasharray="10 10"></line>
+        <circle cx="13" cy="91.5562" r="12.5" fill="#96F50A"></circle>
+      </svg>
+    </span>
+    <h2 class="font-medium text-3xl leading-[1.5] md:text-[40px]">
+      Grâce à notre <span class="text-[#96f509]">Ecobuilder</span>, nous
+      développons des sites web performants, esthétiques et respectueux de
+      l'environnement.
+    </h2>
+  </div>
+  <div class="grid grid-cols-2 xl:flex items-center ml-0 xl:ml-[4rem] my-10 md:my-14">
+    <Image
+      src={campain_carousel_1}
+      alt="Carouse 1"
+      class="relative md:ml-[2rem] xl:-ml-[7rem] z-[1]"
+      width={412}
+      height={315}
+    />
+    <Image
+      src={campain_carousel_2}
+      alt="Carouse 2"
+      class="relative md:-ml-[2rem] xl:-ml-[6rem] z-10"
+      width={476}
+      height={314}
+    />
+    <Image
+      src={campain_carousel_3}
+      alt="Carouse 3"
+      class="relative md:ml-[2rem] xl:-ml-[4rem] xl:mt-[2rem] z-[2]"
+      width={418}
+      height={301}
+    />
+    <Image
+      src={campain_carousel_4}
+      alt="Carouse 4"
+      class="relative md:-ml-[2rem] xl:-ml-[3.5rem] z-[5]"
+      width={406}
+      height={290}
+    />
+  </div>
+  <div
+    class="container mx-auto text-center flex flex-col text-white gap-14 md:gap-20"
+  >
+    <p
+      class="xl:max-w-[1004px] font-medium text-2xl leading-[1.5] md:text-[30px] mx-auto"
+    >
+      Créons ensemble votre site web ultra performant qui répond à<br />vos
+      valeurs et vos objectifs digitaux !
+    </p>
+    <div>
+      <a
+        href="#"
+        class="bg-[#96F50A] font-bold text-[#262626] inline-flex px-12 py-2.5 rounded-full hover:bg-[#96F50A] text-sm"
+        >Let's go green</a
+      >
+    </div>
+    <div
+      class="xl:max-w-[1127px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center"
+    >
+      <Image src={ecobuilder_image} alt="Ecobuilder" width={493} height={281} />
+      <p class="text-xl md:text-2xl text-start font-medium leading-[1.5]">
+        Une méthodologie et technologie exclusive et unique, que nous avons
+        conçu et développé, qui simplifie la création de sites éco-conçus, pour
+        les rendre accessibles, ultra-performants et abordables.
+      </p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,75 @@
+---
+import { Image } from "astro:assets";
+// import imgimages_gii_logo_webp from "../../public/images/gii_logo_square.svg";
+---
+
+<form class="flex flex-col gap-6">
+  <div class="flex flex-col gap-4">
+    <label for="name" class="font-semibold text-xs">Nom et prénom</label>
+    <input
+      name="name"
+      type="text"
+      id="name"
+      class="min-h-[56px] p-4 rounded-lg border border-solid border-[#253946]"
+      placeholder="Clément Dupont..."
+      required
+    />
+  </div>
+  <div class="flex flex-col gap-4">
+    <label for="company" class="font-semibold text-xs">Entreprise</label>
+    <input
+      name="company"
+      type="text"
+      id="company"
+      class="min-h-[56px] p-4 rounded-lg border border-solid border-[#253946]"
+      placeholder="SIG.. "
+      required
+    />
+  </div>
+  <div class="flex flex-col gap-4">
+    <label for="email" class="font-semibold text-xs">Email</label>
+    <input
+      name="email"
+      type="email"
+      id="email"
+      class="min-h-[56px] p-4 rounded-lg border border-solid border-[#253946]"
+      placeholder="Clémentdupont@..."
+      required
+    />
+  </div>
+  <div class="flex flex-col gap-4">
+    <label for="message" class="font-semibold text-xs">Message</label>
+    <textarea
+      rows="5"
+      name="message"
+      id="message"
+      class="min-h-[56px] p-4 rounded-lg border border-solid border-[#253946]"
+      placeholder="Votre message... "
+      required
+    >
+    </textarea>
+  </div>
+  <div class="flex flex-col self-end gap-4 w-full md:w-auto">
+    <button
+      type="submit"
+      class="bg-[#96F50A] border-none rounded-full min-h-[58px] py-5 pl-5 pr-8 inline-flex items-center gap-1 text-sm font-bold justify-center md:justify-start"
+      >Send your message
+      <span>
+        <svg
+          width="25"
+          height="24"
+          viewBox="0 0 25 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M14.9646 21.6225C13.7846 21.6225 12.1146 20.7925 10.7946 16.8225L10.0746 14.6625L7.91463 13.9425C3.95463 12.6225 3.12463 10.9525 3.12463 9.7725C3.12463 8.6025 3.95463 6.9225 7.91463 5.5925L16.4046 2.7625C18.5246 2.0525 20.2946 2.2625 21.3846 3.3425C22.4746 4.4225 22.6846 6.2025 21.9746 8.3225L19.1446 16.8125C17.8146 20.7925 16.1446 21.6225 14.9646 21.6225ZM8.38463 7.0225C5.60463 7.9525 4.61463 9.0525 4.61463 9.7725C4.61463 10.4925 5.60463 11.5925 8.38463 12.5125L10.9046 13.3525C11.1246 13.4225 11.3046 13.6025 11.3746 13.8225L12.2146 16.3425C13.1346 19.1225 14.2446 20.1125 14.9646 20.1125C15.6846 20.1125 16.7846 19.1225 17.7146 16.3425L20.5446 7.8525C21.0546 6.3125 20.9646 5.0525 20.3146 4.4025C19.6646 3.7525 18.4046 3.6725 16.8746 4.1825L8.38463 7.0225Z"
+            fill="#262626"></path>
+          <path
+            d="M10.8547 14.3922C10.6647 14.3922 10.4747 14.3222 10.3247 14.1722C10.0347 13.8822 10.0347 13.4022 10.3247 13.1122L13.9047 9.52219C14.1947 9.23219 14.6747 9.23219 14.9647 9.52219C15.2547 9.81219 15.2547 10.2922 14.9647 10.5822L11.3847 14.1722C11.2447 14.3222 11.0447 14.3922 10.8547 14.3922Z"
+            fill="#262626"></path>
+        </svg>
+      </span>
+    </button>
+  </div>
+</form>
