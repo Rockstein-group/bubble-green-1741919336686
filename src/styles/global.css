@@ -1,0 +1,10 @@
+body > header:before,
+body > main:before,
+body > footer:before {
+  content: none !important;
+}
+
+body > header,
+body > main {
+  margin-bottom: 0 !important;
+}

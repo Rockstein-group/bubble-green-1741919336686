@@ -1,0 +1,49 @@
+name: Build and Deploy Astro
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18 # Replace with your project's Node.js version
+
+      # Step 3: Install dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # Step 4: Build Astro project
+      - name: Build Astro
+        run: npm run build
+
+      - name: Install sshpass
+        env:
+          SSH_USER: buildtest
+          SSH_PASSWORD: nguyenbach
+          IP_VM_INSTANCE: "51.159.197.238"
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y sshpass
+      - name: Deploy to Server
+        env:
+          SSH_USER: buildtest
+          SSH_PASSWORD: nguyenbach
+          IP_VM_INSTANCE: "51.159.197.238"
+        run: |
+          REPO=$(basename ${{ github.repository }})
+          FOLDER_NAME=$(echo $REPO |  tr '[:upper:]' '[:lower:]')
+
+          # mkdir "$FOLDER_NAME.ecobuilder.io"
+          mv ./dist "$FOLDER_NAME.ecobuilder.io"
+          sshpass -p "$SSH_PASSWORD" scp -r -v -o StrictHostKeyChecking=no ./$FOLDER_NAME.ecobuilder.io/ $SSH_USER@$IP_VM_INSTANCE:/var/www/ecobuilder.io/apps/

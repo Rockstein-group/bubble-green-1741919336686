@@ -1,0 +1,60 @@
+---
+import { SEO } from 'astro-seo'
+
+const {
+  seo: {
+    title = '',
+    description = '',
+    keywords = '',
+    image = '',
+    canonical = '',
+    siteName = '',
+    type = '',
+    themeColor = '#fff'
+  }
+} = Astro.props ?? {}
+---
+
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<SEO
+  charset="utf-8"
+  title={title}
+  titleTemplate={title}
+  titleDefault={title}
+  description={description}
+  canonical={canonical}
+  openGraph={{
+    basic: {
+      title: title,
+      type,
+      url: canonical,
+      image
+    },
+    image: {
+      url: image,
+      type: 'image/png',
+      width: 300,
+      height: 300,
+      alt: 'logo'
+    },
+    optional: {
+      siteName,
+      description
+    }
+  }}
+  twitter={{
+    card: 'summary_large_image',
+    title,
+    description,
+    site: siteName,
+    image,
+    imageAlt: 'logo'
+  }}
+  extend={{
+    meta: [
+      { name: 'viewport', content: 'width=device-width,initial-scale=1' },
+      { name: 'keywords', content: keywords },
+      { name: 'theme-color', content: themeColor }
+    ]
+  }}
+/>
