@@ -43,11 +43,9 @@ const finalTitle = title ?? seo.title;
         e.preventDefault();
         const formData = new FormData(e.target);
         const formObject = Object.fromEntries(formData);
-        formObject.emailUser = "quangnhat249@gmail.com";
+        formObject.emailUser = "simon.cardon@bubble-green.com";
         console.log("formObject", formObject);
-        console.log("Test 3");
         try {
-          console.log("Test 4");
           const response = await fetch(
             "https://app.ecobuilder.io/api/send-mail-contact",
             {
@@ -58,11 +56,9 @@ const finalTitle = title ?? seo.title;
               body: JSON.stringify(formObject),
             }
           );
-          console.log("Test 5");
           if (!response.ok) {
             throw new Error("Network response was not ok");
           }
-          console.log("Test 6");
           const result = await response.json();
           showToast("Merci, votre demande a été envoyée.");
           console.log("Form submitted successfully:", result);
