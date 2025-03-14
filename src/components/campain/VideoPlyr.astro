@@ -1,0 +1,42 @@
+---
+import "plyr/dist/plyr.css";
+---
+
+<div id="video-player" class="h-full video-plyr">
+  <video id="player" playsinline class="h-full bg-black">
+    <source src="/video/sample_video.mp4" type="video/mp4" />
+    <track
+      kind="captions"
+      label="English"
+      src="/video/sample.vtt"
+      srclang="en"
+      default
+    />
+  </video>
+</div>
+
+<script>
+  import Plyr from "plyr";
+import { PLYR_OPTIONS } from "../../constant";
+
+  // Initialize Plyr
+  const player = new Plyr("#player", {
+    controls: PLYR_OPTIONS,
+    settings: ["captions", "quality", "speed", "loop"],
+    quality: {
+      default: 720,
+      options: [1080, 720, 480, 360, 240],
+      forced: true,
+      onChange: (newQuality) => {
+        console.log("Quality changed to:", newQuality);
+      },
+    },
+  });
+</script>
+
+<style>
+  #player {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+</style>

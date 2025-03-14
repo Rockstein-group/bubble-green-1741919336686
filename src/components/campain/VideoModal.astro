@@ -1,0 +1,57 @@
+---
+import "plyr/dist/plyr.css";
+---
+
+<!-- Modal -->
+<div id="carousel-modal" class="fixed inset-0 z-50 hidden">
+  <!-- Backdrop -->
+  <div id="modal-backdrop" class="absolute inset-0 bg-black/75"></div>
+
+  <!-- Modal Content -->
+  <div
+    class="relative z-10 flex items-center justify-center w-full h-full p-4 pointer-events-none"
+  >
+    <div
+      class="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto pointer-events-auto"
+    >
+      <div class="p-4 md:p-6 video-plyr">
+        <video id="playerModal" playsinline class="h-full bg-black">
+          <source src="/video/sample_video.mp4" type="video/mp4" />
+          <track
+            kind="captions"
+            label="English"
+            src="/video/sample.vtt"
+            srclang="en"
+            default
+          />
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import Plyr from "plyr";
+  import { PLYR_OPTIONS } from "../../constant";
+
+  // Initialize Plyr
+  const player = new Plyr("#playerModal", {
+    controls: PLYR_OPTIONS,
+    settings: ["captions", "quality", "speed", "loop"],
+    quality: {
+      default: 720,
+      options: [1080, 720, 480, 360, 240],
+      forced: true,
+      onChange: (newQuality) => {
+        console.log("Quality changed to:", newQuality);
+      },
+    },
+  });
+</script>
+
+<style>
+  #player {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+</style>

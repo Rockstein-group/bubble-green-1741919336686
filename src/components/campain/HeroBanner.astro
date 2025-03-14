@@ -7,6 +7,8 @@ import {
   campain_carousel_4,
   ecobuilder_image,
 } from "../../generated/images";
+import VideoPlayer from "../VideoPlayer.astro";
+import VideoModal from "./VideoModal.astro";
 // import imgimages_gii_logo_webp from "../../public/images/gii_logo_square.svg";
 ---
 
@@ -47,7 +49,9 @@ import {
       l'environnement.
     </h2>
   </div>
-  <div class="grid grid-cols-2 xl:flex items-center ml-0 xl:ml-[4rem] 2xl:ml-[6rem] 2xl:justify-center my-10 md:my-14">
+  <div
+    class="grid grid-cols-2 xl:flex items-center ml-0 lg:ml-[2rem] xl:ml-[4rem] 2xl:ml-[6rem] 2xl:justify-center my-10 md:my-14"
+  >
     <Image
       src={campain_carousel_1}
       alt="Carouse 1"
@@ -56,9 +60,10 @@ import {
       height={315}
     />
     <Image
+      id="carousel-modal-trigger"
       src={campain_carousel_2}
       alt="Carouse 2"
-      class="relative md:-ml-[2rem] xl:-ml-[6rem] z-10"
+      class="relative md:-ml-[2rem] xl:-ml-[6rem] z-10 cursor-pointer"
       width={476}
       height={314}
     />
@@ -104,4 +109,59 @@ import {
       </p>
     </div>
   </div>
+  <VideoModal />
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("carousel-modal");
+    const modalTrigger = document.getElementById("carousel-modal-trigger");
+    const closeModalBtn = document.getElementById("close-modal");
+    const modalBackdrop = document.getElementById("modal-backdrop");
+
+    // Function to open modal
+    const openModal = () => {
+      if (modal) {
+        modal.classList.remove("hidden");
+        document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+      }
+    };
+
+    // Function to close modal
+    const closeModal = () => {
+      if (modal) {
+        modal.classList.add("hidden");
+        document.body.style.overflow = ""; // Re-enable scrolling
+      }
+    };
+
+    // Event listeners
+    if (modalTrigger) {
+      modalTrigger.addEventListener("click", openModal);
+    }
+
+    if (closeModalBtn) {
+      closeModalBtn.addEventListener("click", closeModal);
+    }
+
+    // Close modal when clicking on backdrop
+    if (modalBackdrop) {
+      modalBackdrop.addEventListener("click", closeModal);
+    }
+
+    // Close modal on ESC key press
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal && !modal.classList.contains("hidden")) {
+        closeModal();
+      }
+    });
+
+    // Prevent click events inside modal from closing it
+    const modalContent = modal?.querySelector("div > div");
+    if (modalContent) {
+      modalContent.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+    }
+  });
+</script>

@@ -7,3 +7,18 @@ export const styles = {
   headingClass: "font-medium leading-tight",
   buttonClass: "rounded-md border transition-all px-12 py-2.5 font-semibold",
 };
+
+export const PLYR_OPTIONS = [
+  "play-large",
+  "rewind",
+  "play",
+  "fast-forward",
+  "progress",
+  "current-time",
+  "duration",
+  "mute",
+  "volume",
+  "captions",
+  "settings",
+  "fullscreen",
+];
