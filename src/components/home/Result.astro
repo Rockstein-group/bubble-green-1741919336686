@@ -6,32 +6,39 @@ import { result_img } from "../../generated/images";
 ---
 
 <section id="references" class="bg-[#22242A] py-10 md:py-16 relative px-4">
-  <div class="container mx-auto text-center flex flex-col text-white gap-14 md:gap-24">
-    <div class="space-y-6 xl:max-w-[1088px] mx-auto">
-      <h2 class="text-4xl leading-[1.5] font-bold md:text-[50px] md:leading-[75px] text-center">
-        Résultats et références
-      </h2>
-      <p class="text-xl md:text-[25px] leading-[1.5]">
-        Plus de 400 clients partenaires sur la Suisse et l'Europe pour
-        construire ensemble le numérique de demain, dès maintenant.
-      </p>
-    </div>
-    <div class="bg-white p-6 md:py-12 md:px-24 rounded-2xl flex flex-col items-center justify-between lg:flex-row">
-      <div class="text-[#253946] text-left lg:max-w-[530px] flex flex-col gap-8">
-        <h3 class="font-bold text-3xl leading-[1.5] md:text-[40px] md:leading-snug">
-          Notre engagement sur la performance.
-        </h3>
-        <p class="text-xl md:text-2xl">
-          Nous nous engageons sur les résultats que nous définissons ensemble.
+  <lazy-load>
+    <div
+      class="container mx-auto text-center flex flex-col text-white gap-14 md:gap-24"
+    >
+      <div class="space-y-6 xl:max-w-[1088px] mx-auto">
+        <h2
+          class="text-4xl leading-[1.5] font-bold md:text-[50px] md:leading-[75px] text-center"
+        >
+          Résultats et références
+        </h2>
+        <p class="text-xl md:text-[25px] leading-[1.5]">
+          Plus de 400 clients partenaires sur la Suisse et l'Europe pour
+          construire ensemble le numérique de demain, dès maintenant.
         </p>
       </div>
-      <Image
-        src={result_img}
-        alt="Result Image"
-        width={434}
-        height={398}
-      />
+      <div
+        class="bg-white p-6 md:py-12 md:px-24 rounded-2xl flex flex-col items-center justify-between lg:flex-row"
+      >
+        <div
+          class="text-[#253946] text-left lg:max-w-[530px] flex flex-col gap-8"
+        >
+          <h3
+            class="font-bold text-3xl leading-[1.5] md:text-[40px] md:leading-snug"
+          >
+            Notre engagement sur la performance.
+          </h3>
+          <p class="text-xl md:text-2xl">
+            Nous nous engageons sur les résultats que nous définissons ensemble.
+          </p>
+        </div>
+        <Image src={result_img} alt="Result Image" width={434} height={398} />
+      </div>
     </div>
-  </div>
-  <Partner />
+    <Partner />
+  </lazy-load>
 </section>
