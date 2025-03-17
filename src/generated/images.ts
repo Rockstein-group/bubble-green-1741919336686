@@ -35,6 +35,24 @@ export const logo_kingfisher = "/images/logo_kingfisher.webp";
 export const logo_powered_by_bubble_go =
   "/images/logo_powered_by_bubble_go.svg";
 export const logo_vegora = "/images/logo_vegora.webp";
+export const nav_mobile_contact_icon_active =
+  "/images/nav-mobile-contact-icon-active.svg";
+export const nav_mobile_contact_icon = "/images/nav-mobile-contact-icon.svg";
+export const nav_mobile_engagements_icon_active =
+  "/images/nav-mobile-engagements-icon-active.svg";
+export const nav_mobile_engagements_icon =
+  "/images/nav-mobile-engagements-icon.svg";
+export const nav_mobile_implementation_icon_active =
+  "/images/nav-mobile-implementation-icon-active.svg";
+export const nav_mobile_implementation_icon =
+  "/images/nav-mobile-implementation-icon.svg";
+export const nav_mobile_references_icon_active =
+  "/images/nav-mobile-references-icon-active.svg";
+export const nav_mobile_references_icon =
+  "/images/nav-mobile-references-icon.svg";
+export const nav_mobile_solution_icon_active =
+  "/images/nav-mobile-solution-icon-active.svg";
+export const nav_mobile_solution_icon = "/images/nav-mobile-solution-icon.svg";
 export const result_img = "/images/result_img.svg";
 export const simon_cardon_dirigeant = "/images/simon-cardon-dirigeant.webp";
 export const uk_flag = "/images/uk_flag.svg";

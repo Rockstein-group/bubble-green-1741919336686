@@ -1,6 +1,5 @@
 ---
 import "../styles/global.css";
-import MainLayout from "../layouts/MainLayout.astro";
 import Head from "../layouts/Head.astro";
 import HeroBanner from "../components/campain/HeroBanner.astro";
 import Differences from "../components/campain/Differences.astro";
@@ -9,6 +8,7 @@ import Simplicite from "../components/campain/Simplicite.astro";
 import Efficacite from "../components/campain/Efficacite.astro";
 import Performance from "../components/campain/Performance.astro";
 import SimonCardon from "../components/campain/SimonCardon.astro";
+import MainLayoutCampain from "../layouts/MainLayoutCampain.astro";
 
 const seo = {
   title: "Bubble Green - Campagne de Solutions Numériques Écoresponsables",
@@ -21,9 +21,9 @@ const seo = {
 };
 ---
 
-<html lang="en" class="overflow-x-hidden scroll-smooth">
+<html lang="en" class="overflow-x-hidden scroll-smooth scroll-pt-24">
   <Head seo={seo} title="Bubble Green - Campagne de Solutions Numériques Écoresponsables", />
-  <MainLayout>
+  <MainLayoutCampain>
     <HeroBanner />
     <Differences/>
     <Engagements/>
@@ -31,5 +31,5 @@ const seo = {
     <Efficacite/>
     <Performance />
     <SimonCardon />
-  </MainLayout>
+  </MainLayoutCampain>
 </html>

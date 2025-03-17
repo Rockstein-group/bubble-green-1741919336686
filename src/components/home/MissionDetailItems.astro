@@ -1,11 +1,9 @@
 ---
-import { Image } from "astro:assets";
 import DetailsComponent from "./DetailsComponent.astro";
-// import imgimages_gii_logo_webp from "../../public/images/gii_logo_square.svg";
 ---
 
 <div class="flex flex-col gap-8">
-  <DetailsComponent number="1" title="Mesure d'impact & diagnostic">
+  <DetailsComponent number="1" title="Mesure d'impact & diagnostic" isOpen={true}>
     <ul class="text-left list-disc flex flex-col gap-4">
       <li>
         <p class="text-xl">

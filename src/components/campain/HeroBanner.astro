@@ -7,16 +7,17 @@ import {
   campain_carousel_4,
   ecobuilder_image,
 } from "../../generated/images";
-import VideoPlayer from "../VideoPlayer.astro";
 import VideoModal from "./VideoModal.astro";
-// import imgimages_gii_logo_webp from "../../public/images/gii_logo_square.svg";
 ---
 
-<section id="campain-banner" class="bg-[#243946] py-10 md:py-28 relative px-4">
+<section class="bg-[#243946] py-10 md:py-28 relative px-4">
   <div
     class="container mx-auto text-center flex flex-col text-white gap-14 md:gap-20"
   >
-    <h1 class="text-4xl leading-[1.5] md:text-6xl md:leading-[84px] font-bold">
+    <h1
+      id="solution-campain"
+      class="text-4xl leading-[1.5] md:text-6xl md:leading-[84px] font-bold"
+    >
       Nous créons pour vous le site <span class="text-[#96f509]"
         >web éco-conçu</span
       > dont vous avez besoin, <span class="text-[#96f509]"
@@ -99,6 +100,7 @@ import VideoModal from "./VideoModal.astro";
       >
     </div>
     <div
+      id="implementation"
       class="xl:max-w-[1127px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center"
     >
       <Image src={ecobuilder_image} alt="Ecobuilder" width={493} height={281} />

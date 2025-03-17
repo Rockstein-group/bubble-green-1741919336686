@@ -1,10 +1,11 @@
 ---
 import { Image } from "astro:assets";
 import Partner from "./Partner.astro";
+import { result_img } from "../../generated/images";
 // import imgimages_gii_logo_webp from "../../public/images/gii_logo_square.svg";
 ---
 
-<section class="bg-[#22242A] py-10 md:py-16 relative px-4">
+<section id="references" class="bg-[#22242A] py-10 md:py-16 relative px-4">
   <div class="container mx-auto text-center flex flex-col text-white gap-14 md:gap-24">
     <div class="space-y-6 xl:max-w-[1088px] mx-auto">
       <h2 class="text-4xl leading-[1.5] font-bold md:text-[50px] md:leading-[75px] text-center">
@@ -25,7 +26,7 @@ import Partner from "./Partner.astro";
         </p>
       </div>
       <Image
-        src="/images/result_img.svg"
+        src={result_img}
         alt="Result Image"
         width={434}
         height={398}

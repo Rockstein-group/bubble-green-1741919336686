@@ -3,37 +3,38 @@ import "@fontsource-variable/inter";
 import Header from "../layouts/Header.astro";
 import Footer from "./Footer.astro";
 import NavMobile from "./NavMobile.astro";
+import NavMobileCampain from "./NavMobileCampain.astro";
 ---
 
 <body>
-  <Header redirectUrl="/campain" contactHref="/#contact">
+  <Header redirectUrl="/" contactHref="#contact">
     <ul
       class="hidden lg:flex space-x-2 md:space-x-6 text-gray-700 py-2 bg-white rounded-full px-5 md:px-12"
     >
       <li class="flex items-center">
         <a
-          href="/#vision"
+          href="#solution-campain"
           class="text-[#253946] hover:text-black text-[13.5px] md:text-base font-semibold"
-          >Vision</a
+          >Solution</a
         >
       </li>
       <li class="flex items-center">
         <a
-          href="/#mission"
+          href="#implementation"
           class="text-[#253946] hover:text-black text-[13.5px] md:text-base font-semibold"
-          >Mission</a
+          >Mise en oeuvre</a
         >
       </li>
       <li class="flex items-center">
         <a
-          href="/#solution"
+          href="#engagement"
           class="text-[#253946] hover:text-black text-[13.5px] md:text-base font-semibold"
-          >Solutions</a
+          >Engagements</a
         >
       </li>
       <li class="flex items-center">
         <a
-          href="/#references"
+          href="#references"
           class="text-[#253946] hover:text-black text-[13.5px] md:text-base font-semibold"
           >Références</a
         >
@@ -49,29 +50,29 @@ import NavMobile from "./NavMobile.astro";
     >
       <li>
         <a
-          href="/#vision"
-          class="text-black text-sm md:text-base font-semibold">Vision</a
+          href="#solution-campain"
+          class="text-black text-sm md:text-base font-semibold">Solution</a
         >
       </li>
       <li>
         <a
-          href="/#mission"
+           href="#implementation"
           class="text-black text-sm md:text-base font-semibold"
-          >Mission</a
+          >Mise en oeuvre</a
         >
       </li>
       <li>
-        <a href="/#solution" class="text-black text-sm md:text-base font-semibold"
-          >Solutions</a
+        <a href="#engagement" class="text-black text-sm md:text-base font-semibold"
+          >Engagements</a
         >
       </li>
 
       <li>
-        <a href="/#references" class="text-black text-sm md:text-base font-semibold"
+        <a href="#references" class="text-black text-sm md:text-base font-semibold"
           >Références</a
         >
       </li>
     </ul>
   </Footer>
-  <NavMobile />
+  <NavMobileCampain />
 </body>

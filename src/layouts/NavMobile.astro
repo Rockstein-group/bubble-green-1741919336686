@@ -1,0 +1,91 @@
+---
+import { Image } from "astro:assets";
+---
+
+<lazy-load>
+  <nav
+    class="mobile-nav shadow-2xl bg-white fixed bottom-0 left-0 right-0 z-50 lg:hidden py-2 border-t border-black/05"
+  >
+    <ul class="grid grid-cols-5 gap-4" id="mobile-nav">
+      <li
+        class="flex flex-col items-center justify-center gap-2 text-center px-3"
+      >
+        <a href="/#vision" data-icon="solution" class="nav-link-mobile">
+          <Image
+            src="/images/nav-mobile-solution-icon.svg"
+            width={20}
+            height={20}
+            class="w-5 h-5"
+            alt="Solution Icon"
+          />
+        </a>
+        <span class="capitalize text-xs min-h-8">Vision</span>
+      </li>
+      <li
+        class="flex flex-col items-center justify-center gap-2 text-center px-3"
+      >
+        <a href="/#mission" data-icon="implementation" class="nav-link-mobile">
+          <Image
+            src="/images/nav-mobile-implementation-icon.svg"
+            width={20}
+            height={20}
+            class="w-5 h-5"
+            alt="Implementation Icon"
+          />
+        </a>
+        <span class="capitalize text-xs min-h-8">Mission</span>
+      </li>
+      <li
+        class="flex flex-col items-center justify-center gap-2 text-center px-3"
+      >
+        <a
+          href="/#solution"
+          data-icon="engagements"
+          class="nav-link-mobile"
+        >
+          <Image
+            src="/images/nav-mobile-engagements-icon.svg"
+            width={20}
+            height={20}
+            class="w-5 h-5"
+            alt="Engagements Icon"
+          />
+        </a>
+        <span class="capitalize text-xs min-h-8">Solutions</span>
+      </li>
+      <li
+        class="flex flex-col items-center justify-center gap-2 text-center px-3"
+      >
+        <a href="/#references" data-icon="references" class="nav-link-mobile">
+          <Image
+            src="/images/nav-mobile-references-icon.svg"
+            width={20}
+            height={20}
+            class="w-5 h-5"
+            alt="References Icon"
+          />
+        </a>
+        <span class="capitalize text-xs min-h-8">Références</span>
+      </li>
+      <li
+        class="flex flex-col items-center justify-center gap-2 text-center px-3"
+      >
+        <a href="/#contact" data-icon="contact" class="nav-link-mobile">
+          <Image
+            src="/images/nav-mobile-contact-icon.svg"
+            width={20}
+            height={20}
+            class="w-5 h-5"
+            alt="Contact Icon"
+          />
+        </a>
+        <span class="capitalize text-xs min-h-8">Contact</span>
+      </li>
+    </ul>
+  </nav>
+</lazy-load>
+
+<script>
+  import { initializeMobileNav } from "../utils/nav-mobile";
+  initializeMobileNav();
+</script>

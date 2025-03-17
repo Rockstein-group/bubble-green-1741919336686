@@ -1,99 +1,87 @@
 ---
 import { Image } from "astro:assets";
 import "../styles/global.css";
-// import imgimages_gii_logo_webp from "../../public/images/gii_logo_square.svg";
+import { fr_flag, logo_bubble_green, uk_flag } from "../generated/images";
+const { contactHref, redirectUrl } = Astro.props;
 ---
 
-<header>
-  <div
-    class="bg-white text-black text-center text-sm font-bold underline py-2.5 px-4"
-  >
-    <div class="container mx-auto">
-      Découvrir EcoBuilder - Notre solution unique pour vous créer un site web
-      éco-conçu !
-    </div>
+<div
+  class="bg-white text-black text-center text-sm font-bold  py-2.5 px-4"
+>
+  <div class="container mx-auto">
+   <a href={redirectUrl} class="underline">Découvrir EcoBuilder - Notre solution unique pour vous créer un site web
+    éco-conçu !</a>
   </div>
+</div>
+<header class="sticky top-0 z-50">
   <div class="mx-auto bg-[#243946] px-4">
-   <div class="container mx-auto">
-    <nav class="flex items-center justify-between flex-col gap-6 lg:flex-row lg:gap-0 py-7">
-      <!-- Logo -->
-      <div class="text-xl font-semibold">
-        <a href="/">
-          <Image
-            src="/images/logo_bubble_green.svg"
-            alt="Bubble Green Logo"
-            width={227}
-            height={26}
-          />
-        </a>
-      </div>
-
-      <!-- Menu -->
-      <ul
-        class="flex space-x-6 text-gray-700 py-1.5 bg-white rounded-full px-6 md:px-12"
+    <div class="container mx-auto">
+      <nav
+        class="flex items-center justify-between gap-6 lg:flex-row lg:gap-0 py-7"
       >
-        <li>
-          <a href="/#vision" class="text-[#253946] hover:text-black text-base font-semibold">Vision</a>
-        </li>
-        <li>
-          <a href="/#mission" class="text-[#253946] hover:text-black text-base font-semibold">Mission</a>
-        </li>
-        <li>
-          <a href="/#solution" class="text-[#253946] hover:text-black text-base font-semibold">Solutions</a>
-        </li>
-        <li>
-          <a href="#" class="text-[#253946] hover:text-black text-base font-semibold">Références</a>
-        </li>
-      </ul>
+        <!-- Logo -->
+        <div class="text-xl font-semibold">
+          <a href="/">
+            <Image
+              src={logo_bubble_green}
+              alt="Bubble Green Logo"
+              width={227}
+              height={26}
+            />
+          </a>
+        </div>
 
-      <!-- Right side (Contact & Language Switch) -->
-      <div class="flex items-center space-x-4">
-        <a href="/#contact"
-          class="bg-[#96F50A] inline-flex px-4 py-2.5 rounded-full hover:bg-[#96F50A] font-semibold text-sm"
-          >Contact Us</a
-        >
-        <details class="relative inline-block text-left">
-          <summary
-            class="flex items-center gap-2 px-3 py-2.5 min-h-10 bg-[#2D2D2D] text-white rounded-lg cursor-pointer"
+        <slot />
+  
+        <!-- Right side (Contact & Language Switch) -->
+        <div class="flex items-center space-x-4">
+          <a
+            href={contactHref}
+            class="bg-[#96F50A] hidden lg:inline-flex px-2.5 sm:px-4 py-2.5 rounded-full hover:bg-[#96F50A] font-semibold text-xs sm:text-sm whitespace-nowrap"
+            >Contact Us</a
           >
-            <span>
-              <Image
-                src="/images/fr_flag.svg"
-                alt="French Flag"
-                width={22}
-                height={16}
-              />
-            </span>
-            <svg
-              class="w-4 h-4"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
+          <details class="relative inline-block text-left">
+            <summary
+              class="flex items-center gap-2 px-3 py-2.5 min-h-10 bg-[#2D2D2D] text-white rounded-lg cursor-pointer"
             >
-              <path
-                fill-rule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clip-rule="evenodd"></path>
-            </svg>
-          </summary>
-          <ul
-            class="absolute left-0 mt-2 bg-white border border-gray-300 rounded-lg shadow-lg z-10 min-w-20"
-          >
-            <li
-              class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer gap-2 text-sm rounded-lg"
+              <span>
+                <Image
+                  src={fr_flag}
+                  alt="French Flag"
+                  width={22}
+                  height={16}
+                />
+              </span>
+              <svg
+                class="w-4 h-4"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </summary>
+            <ul
+              class="absolute left-0 mt-2 bg-white border border-gray-300 rounded-lg shadow-lg z-10 min-w-20"
             >
-              <Image
-                src="/images/uk_flag.svg"
-                alt="United Kingdom Flag"
-                width={22}
-                height={16}
-              />
-              <span>EN</span>
-            </li>
-          </ul>
-        </details>
-      </div>
-    </nav>
-   </div>
+              <li
+                class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer gap-2 text-sm rounded-lg"
+              >
+                <Image
+                  src={uk_flag}
+                  alt="United Kingdom Flag"
+                  width={22}
+                  height={16}
+                />
+                <span>EN</span>
+              </li>
+            </ul>
+          </details>
+        </div>
+      </nav>
+    </div>
   </div>
 </header>

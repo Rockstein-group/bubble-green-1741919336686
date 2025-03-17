@@ -27,7 +27,7 @@ body > main {
 }
 
 .plyr.plyr--full-ui {
-  @apply h-full;
+  @apply h-[95%];
 }
 
 .wrapper {
@@ -73,7 +73,3 @@ body > main {
 .rangeActive {
   background-color: green;
 }
-
-/* .plyr__controls {
-  @apply !relative w-full flex justify-between order-1;
-} */
