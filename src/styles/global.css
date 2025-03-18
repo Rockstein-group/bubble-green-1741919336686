@@ -21,16 +21,16 @@ body > main {
   @apply !bg-black/50;
 }
 
-.volume-slider-container {
-  z-index: 10;
-  transition: all 0.2s ease;
-}
-
 .plyr.plyr--full-ui {
   @apply h-[95%];
 }
 
-.wrapper {
+/* .volume-slider-container {
+  z-index: 10;
+  transition: all 0.2s ease;
+} */
+
+/* .wrapper {
   width: 200px;
   display: flex;
   justify-content: center;
@@ -68,8 +68,8 @@ body > main {
 }
 #custom-toggle:focus {
   outline: none;
-}
+} */
 
-.rangeActive {
+/* .rangeActive {
   background-color: green;
-}
+} */
