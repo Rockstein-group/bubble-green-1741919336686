@@ -50,39 +50,41 @@ import VideoModal from "./VideoModal.astro";
       l'environnement.
     </h2>
   </div>
-  <div
-    class="grid grid-cols-2 xl:flex items-center ml-0 lg:ml-[2rem] xl:ml-[4rem] 2xl:ml-[6rem] 2xl:justify-center my-10 md:my-14"
-  >
-    <Image
-      src={campain_carousel_1}
-      alt="Carouse 1"
-      class="relative md:ml-[2rem] xl:-ml-[7rem] z-[1]"
-      width={412}
-      height={315}
-    />
-    <Image
-      id="carousel-modal-trigger"
-      src={campain_carousel_2}
-      alt="Carouse 2"
-      class="relative md:-ml-[2rem] xl:-ml-[6rem] z-10 cursor-pointer"
-      width={476}
-      height={314}
-    />
-    <Image
-      src={campain_carousel_3}
-      alt="Carouse 3"
-      class="relative md:ml-[2rem] xl:-ml-[4rem] xl:mt-[2rem] z-[2]"
-      width={418}
-      height={301}
-    />
-    <Image
-      src={campain_carousel_4}
-      alt="Carouse 4"
-      class="relative md:-ml-[2rem] xl:-ml-[3.5rem] z-[5]"
-      width={406}
-      height={290}
-    />
-  </div>
+  <lazy-load>
+    <div
+      class="grid grid-cols-2 xl:flex items-center ml-0 lg:ml-[2rem] xl:ml-[4rem] 2xl:ml-[6rem] 2xl:justify-center my-10 md:my-16"
+    >
+      <Image
+        src={campain_carousel_1}
+        alt="Carouse 1"
+        class="relative md:ml-[2rem] xl:-ml-[7rem] z-[1]"
+        width={412}
+        height={315}
+      />
+      <Image
+        id="carousel-modal-trigger"
+        src={campain_carousel_2}
+        alt="Carouse 2"
+        class="relative md:-ml-[2rem] xl:-ml-[6rem] z-10 cursor-pointer"
+        width={476}
+        height={314}
+      />
+      <Image
+        src={campain_carousel_3}
+        alt="Carouse 3"
+        class="relative md:ml-[2rem] xl:-ml-[4rem] xl:mt-[2rem] z-[2]"
+        width={418}
+        height={301}
+      />
+      <Image
+        src={campain_carousel_4}
+        alt="Carouse 4"
+        class="relative md:-ml-[2rem] xl:-ml-[3.5rem] z-[5]"
+        width={406}
+        height={290}
+      />
+    </div>
+  </lazy-load>
   <div
     class="container mx-auto text-center flex flex-col text-white gap-14 md:gap-20"
   >
