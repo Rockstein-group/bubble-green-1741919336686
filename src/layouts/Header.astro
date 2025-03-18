@@ -20,7 +20,7 @@ const { contactHref, redirectUrl } = Astro.props;
         class="flex items-center justify-between gap-6 lg:flex-row lg:gap-0 py-7"
       >
         <!-- Logo -->
-        <div class="text-xl font-semibold">
+        <div class="text-xl font-semibold xl:min-w-[342px]">
           <a href="/">
             <Image
               src={logo_bubble_green}
@@ -34,11 +34,11 @@ const { contactHref, redirectUrl } = Astro.props;
         <slot />
   
         <!-- Right side (Contact & Language Switch) -->
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center justify-end space-x-4 xl:min-w-[342px]">
           <a
             href={contactHref}
             class="bg-[#96F50A] hidden lg:inline-flex px-2.5 sm:px-4 py-2.5 rounded-full hover:bg-[#96F50A] font-semibold text-xs sm:text-sm whitespace-nowrap"
-            >Contact Us</a
+            >Contact</a
           >
           <details class="relative inline-block text-left">
             <summary

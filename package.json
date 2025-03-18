@@ -14,6 +14,7 @@
     "@astrojs/sitemap": "3.2.1",
     "@astrojs/tailwind": "5.1.0",
     "@fontsource-variable/inter": "^5.1.1",
+    "@fontsource/poppins": "^5.2.5",
     "astro": "4.4.15",
     "astro-compressor": "0.4.1",
     "astro-robots-txt": "1.0.0",

@@ -1,45 +1,54 @@
 ---
 import { Image } from "astro:assets";
-import { logo_akoa, logo_castorama, logo_digital_forest, logo_formasup, logo_green_it_impact, logo_kingfisher, logo_vegora } from "../../generated/images";
+import {
+  logo_akoa,
+  logo_castorama,
+  logo_digital_forest,
+  logo_formasup,
+  logo_green_it_impact,
+  logo_kingfisher,
+  logo_vegora,
+} from "../../generated/images";
 // import imgimages_gii_logo_webp from "../../public/images/gii_logo_square.svg";
 ---
 
-<div class="flex flex-col items-center lg:justify-center xl:justify-between gap-8 lg:gap-4 lg:px-8 pt-16 lg:flex-row lg:flex-wrap xl:flex-nowrap">
-  <Image src={logo_akoa} width={126} height={53} alt="Akoa Logo" />
-  <Image
-    src={logo_digital_forest}
-    width={168}
-    height={44}
-    alt="Digital Forest Logo"
-  />
-  <Image
-    src={logo_formasup}
-    width={114.55}
-    height={64}
-    alt="Formasup Logo"
-  />
-  <Image
-    src={logo_green_it_impact}
-    width={217.63}
-    height={53}
-    alt="Green IT Impact Logo"
-  />
-  <Image
-    src={logo_castorama}
-    width={231}
-    height={44}
-    alt="Castorama Logo"
-  />
-  <Image
-    src={logo_vegora}
-    width={181}
-    height={34}
-    alt="Vegora Logo"
-  />
-  <Image
-    src={logo_kingfisher}
-    width={208.82}
-    height={44}
-    alt="Kingfisher Logo"
-  />
+<div
+  class="flex items-center flex-wrap justify-between gap-6 lg:gap-4 lg:px-8 pt-16 lg:flex-row lg:flex-wrap xl:flex-nowrap"
+>
+  <div class="w-[45%] md:w-auto mx-auto">
+    <Image src={logo_akoa} width={126} height={53} alt="Akoa Logo" />
+  </div>
+  <div class="w-[45%] md:w-auto mx-auto">
+    <Image
+      src={logo_digital_forest}
+      width={168}
+      height={44}
+      alt="Digital Forest Logo"
+    />
+  </div>
+  <div class="w-[45%] md:w-auto mx-auto">
+    <Image src={logo_formasup} width={114.55} height={64} alt="Formasup Logo" />
+  </div>
+  <div class="w-[45%] md:w-auto mx-auto">
+    <Image
+      src={logo_green_it_impact}
+      width={217.63}
+      height={53}
+      alt="Green IT Impact Logo"
+    />
+  </div>
+  <div class="w-[45%] md:w-auto mx-auto">
+    <Image src={logo_castorama} width={231} height={44} alt="Castorama Logo" />
+  </div>
+  <div class="w-[45%] md:w-auto mx-auto">
+    <Image src={logo_vegora} width={181} height={34} alt="Vegora Logo" />
+  </div>
+  <div class="w-[45%] md:w-auto mx-auto">
+    <Image
+      src={logo_kingfisher}
+      width={208.82}
+      height={44}
+      alt="Kingfisher Logo"
+    />
+  </div>
 </div>
