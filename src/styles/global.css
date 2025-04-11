@@ -17,6 +17,35 @@ body > main {
   --plyr-color-main: #e11d48;
 }
 
+/* Hide Google Translate top bar */
+body {
+  top: 0 !important;
+}
+
+/* Hide Google Translate attribution */
+.goog-te-banner-frame,
+.goog-te-gadget-icon,
+.goog-te-menu-value span,
+.goog-te-gadget span,
+.VIpgJd-ZVi9od-l4eHX-hSRGPd,
+.VIpgJd-ZVi9od-ORHb-OEVmcd {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+  font-size: 0px !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+  display: none !important;
+}
+
+/* Custom styles for the Google Translate widget */
+#google_translate_element {
+  display: none;
+}
+
 .plyr__control--overlaid {
   @apply !bg-black/50;
 }
@@ -25,51 +54,26 @@ body > main {
   @apply h-[95%];
 }
 
-/* .volume-slider-container {
-  z-index: 10;
-  transition: all 0.2s ease;
-} */
-
-/* .wrapper {
-  width: 200px;
-  display: flex;
-  justify-content: center;
-  padding: 20px 0;
+/* Style for the menu links */
+header ul.lg\:flex li a {
+  @apply relative transition-colors duration-300 ease-in-out;
 }
 
-#custom-toggle {
-  -webkit-appearance: none;
-  appearance: none;
-  height: 20px;
-  width: 40px;
-  background-color: #333;
-  -webkit-border-radius: 25px;
-  border-radius: 25px;
-  padding: 0 2px;
-  margin: 0;
-  cursor: pointer;
+/* Create the underline effect using pseudo-element */
+header ul.lg\:flex li a::after {
+  @apply content-[''] absolute h-[3px] left-0 right-0 -bottom-[6px] bg-[#96F50A] scale-x-0 origin-right transition-transform duration-300 ease-out;
 }
-#custom-toggle.tgl-def::-webkit-slider-thumb {
-  background-color: orange;
-}
-#custom-toggle.tgl-on::-webkit-slider-thumb {
-  background-color: green;
-}
-#custom-toggle.tgl-off::-webkit-slider-thumb {
-  background-color: red;
-}
-#custom-toggle::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 16px;
-  height: 16px;
-  -webkit-border-radius: 25px;
-  border-radius: 25px;
-}
-#custom-toggle:focus {
-  outline: none;
-} */
 
-/* .rangeActive {
-  background-color: green;
-} */
+/* Hover effect */
+header ul.lg\:flex li a:hover::after {
+  @apply scale-x-100 origin-left;
+}
+
+/* Active state */
+header ul.lg\:flex li a.active {
+  @apply text-black;
+}
+
+header ul.lg\:flex li a.active::after {
+  @apply scale-x-100 origin-left;
+}

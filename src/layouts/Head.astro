@@ -148,7 +148,7 @@ const finalTitle = title ?? seo.title;
           e.preventDefault();
           const formData = new FormData(e.target);
           const formObject = Object.fromEntries(formData);
-          formObject.emailUser = "simon.cardon@bubble-green.com";
+          formObject.emailUser = "hello@bubble-green.ch";
           console.log("formObject", formObject);
           try {
             const response = await fetch(
@@ -167,9 +167,11 @@ const finalTitle = title ?? seo.title;
             const result = await response.json();
             showToast("Merci, votre demande a été envoyée.");
             console.log("Form submitted successfully:", result);
+            e.target.reset();
           } catch (error) {
             console.error("Error submitting form:", error);
             showToast("Erreur lors de la soumission du formulaire", "error");
+            e.target.reset();
           }
         });
       });

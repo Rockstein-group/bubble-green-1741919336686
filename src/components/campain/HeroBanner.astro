@@ -10,14 +10,12 @@ import {
 import VideoModal from "./VideoModal.astro";
 ---
 
-<section class="bg-[#243946] py-10 md:py-28 relative px-4">
+<section class="bg-[#243946] py-10 md:py-28 relative px-4 flex flex-col text-white gap-14 md:gap-24">
   <div
+    id="solution-campain"
     class="container mx-auto text-center flex flex-col text-white gap-14 md:gap-24"
   >
-    <h1
-      id="solution-campain"
-      class="text-4xl leading-[1.5] md:text-6xl md:leading-[84px] font-bold"
-    >
+    <h1 class="text-4xl leading-[1.5] md:text-6xl md:leading-[84px] font-bold">
       Nous créons pour vous le site <span class="text-[#96f509]"
         >web éco-conçu</span
       > dont vous avez besoin, <span class="text-[#96f509]"
@@ -45,76 +43,84 @@ import VideoModal from "./VideoModal.astro";
       </svg>
     </span>
     <h2 class="font-medium text-3xl leading-[1.5] md:text-[40px]">
-      Grâce à notre <span class="text-[#96f509]">Ecobuilder</span>, nous
-      développons des sites web performants, esthétiques et respectueux de
-      l'environnement.
+      Grâce à notre <a class="text-[#96f509]" href="https://ecobuilder.io/"
+        >Ecobuilder</a
+      >, nous développons des sites web performants, esthétiques et respectueux
+      de l'environnement.
     </h2>
+    <lazy-load>
+      <div
+        class="grid grid-cols-2 xl:flex items-center ml-0 lg:ml-[2rem] xl:ml-[4rem] 2xl:ml-[6rem] 2xl:justify-center my-10 md:my-16"
+      >
+        <Image
+          src={campain_carousel_1}
+          alt="Carouse 1"
+          class="relative md:ml-[2rem] xl:-ml-[7rem] z-[1]"
+          width={412}
+          height={315}
+        />
+        <Image
+          id="carousel-modal-trigger"
+          src={campain_carousel_2}
+          alt="Carouse 2"
+          class="relative md:-ml-[2rem] xl:-ml-[6rem] z-10 cursor-pointer"
+          width={476}
+          height={314}
+        />
+        <Image
+          src={campain_carousel_3}
+          alt="Carouse 3"
+          class="relative md:ml-[2rem] xl:-ml-[4rem] xl:mt-[2rem] z-[2]"
+          width={418}
+          height={301}
+        />
+        <Image
+          src={campain_carousel_4}
+          alt="Carouse 4"
+          class="relative md:-ml-[2rem] xl:-ml-[3.5rem] z-[5]"
+          width={406}
+          height={290}
+        />
+      </div>
+
+      <div
+        class="container mx-auto text-center flex flex-col text-white gap-14 md:gap-24"
+      >
+        <p
+          class="xl:max-w-[1004px] font-medium text-2xl leading-[1.5] md:text-[30px] mx-auto"
+        >
+          Créons ensemble votre site web ultra performant qui répond à<br />vos
+          valeurs et vos objectifs digitaux !
+        </p>
+        <div>
+          <a
+            href="#"
+            class="bg-[#96F50A] font-bold text-[#262626] inline-flex px-12 py-2.5 rounded-full hover:bg-[#96F50A] text-sm"
+            >Let's go green</a
+          >
+        </div>
+      </div>
+      <VideoModal />
+    </lazy-load>
   </div>
   <lazy-load>
-    <div
-      class="grid grid-cols-2 xl:flex items-center ml-0 lg:ml-[2rem] xl:ml-[4rem] 2xl:ml-[6rem] 2xl:justify-center my-10 md:my-16"
-    >
-      <Image
-        src={campain_carousel_1}
-        alt="Carouse 1"
-        class="relative md:ml-[2rem] xl:-ml-[7rem] z-[1]"
-        width={412}
-        height={315}
-      />
-      <Image
-        id="carousel-modal-trigger"
-        src={campain_carousel_2}
-        alt="Carouse 2"
-        class="relative md:-ml-[2rem] xl:-ml-[6rem] z-10 cursor-pointer"
-        width={476}
-        height={314}
-      />
-      <Image
-        src={campain_carousel_3}
-        alt="Carouse 3"
-        class="relative md:ml-[2rem] xl:-ml-[4rem] xl:mt-[2rem] z-[2]"
-        width={418}
-        height={301}
-      />
-      <Image
-        src={campain_carousel_4}
-        alt="Carouse 4"
-        class="relative md:-ml-[2rem] xl:-ml-[3.5rem] z-[5]"
-        width={406}
-        height={290}
-      />
-    </div>
-
-  <div
-    class="container mx-auto text-center flex flex-col text-white gap-14 md:gap-24"
-  >
-    <p
-      class="xl:max-w-[1004px] font-medium text-2xl leading-[1.5] md:text-[30px] mx-auto"
-    >
-      Créons ensemble votre site web ultra performant qui répond à<br />vos
-      valeurs et vos objectifs digitaux !
-    </p>
-    <div>
-      <a
-        href="#"
-        class="bg-[#96F50A] font-bold text-[#262626] inline-flex px-12 py-2.5 rounded-full hover:bg-[#96F50A] text-sm"
-        >Let's go green</a
-      >
-    </div>
     <div
       id="implementation"
       class="xl:max-w-[1127px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center"
     >
-      <Image src={ecobuilder_image} alt="Ecobuilder" width={493} height={281} />
+      <Image
+        src={ecobuilder_image}
+        alt="Ecobuilder"
+        width={493}
+        height={281}
+      />
       <p class="text-xl md:text-2xl text-start font-medium leading-[1.5]">
         Une méthodologie et technologie exclusive et unique, que nous avons
-        conçu et développé, qui simplifie la création de sites éco-conçus, pour
-        les rendre accessibles, ultra-performants et abordables.
+        conçu et développé, qui simplifie la création de sites éco-conçus,
+        pour les rendre accessibles, ultra-performants et abordables.
       </p>
     </div>
-  </div>
-  <VideoModal />
-</lazy-load>
+  </lazy-load>
 </section>
 
 <script>

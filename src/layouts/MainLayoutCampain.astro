@@ -1,9 +1,4 @@
 ---
-// import '@fontsource/poppins';
-// import '@fontsource/poppins/400.css';
-// import '@fontsource/poppins/500.css';
-// import '@fontsource/poppins/600.css';
-// import '@fontsource/poppins/700.css';
 import Header from "../layouts/Header.astro";
 import Footer from "./Footer.astro";
 import NavMobileCampain from "./NavMobileCampain.astro";
@@ -17,28 +12,28 @@ import NavMobileCampain from "./NavMobileCampain.astro";
       <li class="flex items-center">
         <a
           href="#solution-campain"
-          class="text-[#253946] hover:text-black text-[13.5px] md:text-base font-semibold"
+          class="text-[#253946] hover:text-black text-[13.5px] md:text-base font-semibold nav-link"
           >Solution</a
         >
       </li>
       <li class="flex items-center">
         <a
           href="#implementation"
-          class="text-[#253946] hover:text-black text-[13.5px] md:text-base font-semibold"
+          class="text-[#253946] hover:text-black text-[13.5px] md:text-base font-semibold nav-link"
           >Mise en oeuvre</a
         >
       </li>
       <li class="flex items-center">
         <a
           href="#engagement"
-          class="text-[#253946] hover:text-black text-[13.5px] md:text-base font-semibold"
+          class="text-[#253946] hover:text-black text-[13.5px] md:text-base font-semibold nav-link"
           >Engagements</a
         >
       </li>
       <li class="flex items-center">
         <a
           href="#references"
-          class="text-[#253946] hover:text-black text-[13.5px] md:text-base font-semibold"
+          class="text-[#253946] hover:text-black text-[13.5px] md:text-base font-semibold nav-link"
           >Références</a
         >
       </li>
@@ -54,28 +49,35 @@ import NavMobileCampain from "./NavMobileCampain.astro";
       <li>
         <a
           href="#solution-campain"
-          class="text-black text-sm md:text-base font-semibold">Solution</a
+          class="text-black text-sm md:text-base font-semibold nav-link">Solution</a
         >
       </li>
       <li>
         <a
            href="#implementation"
-          class="text-black text-sm md:text-base font-semibold"
+          class="text-black text-sm md:text-base font-semibold nav-link"
           >Mise en oeuvre</a
         >
       </li>
       <li>
-        <a href="#engagement" class="text-black text-sm md:text-base font-semibold"
+        <a href="#engagement" class="text-black text-sm md:text-base font-semibold nav-link"
           >Engagements</a
         >
       </li>
 
       <li>
-        <a href="#references" class="text-black text-sm md:text-base font-semibold"
+        <a href="#references" class="text-black text-sm md:text-base font-semibold nav-link"
           >Références</a
         >
       </li>
     </ul>
   </Footer>
   <NavMobileCampain />
+  <script>
+    import { initNavigationHighlighter } from "../components/navigation-highlight"
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      initNavigationHighlighter();
+    });
+  </script>
 </body>

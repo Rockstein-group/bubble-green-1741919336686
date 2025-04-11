@@ -5,18 +5,20 @@ import MissionDetailItems from "./MissionDetailItems.astro";
 // import imgimages_gii_logo_webp from "../../public/images/gii_logo_square.svg";
 ---
 
-<section class="bg-[#243946] py-10 md:py-24 relative px-4">
+<section class="bg-[#243946] py-10 md:py-24 relative px-4" id="mission">
   <div
     class="xl:max-w-[1015px] container mx-auto text-center flex flex-col text-white gap-16"
   >
-    <h2 class="text-4xl leading-[1.5] md:text-[50px] md:leading-[75px] font-bold">
+    <h2
+      class="text-4xl leading-[1.5] md:text-[50px] md:leading-[75px] font-bold"
+    >
       Y a pas de <span class="text-[#96F50A]">débat</span> ! <br />Nous devons
       améliorer l'impact du<br />numérique <span
         class="relative inline-block before:content-[''] before:absolute before:h-[1px] before:left-0 before:right-0 before:bg-white before:bottom-[11px]"
         >au plus vite</span
       > !
     </h2>
-    <span class="mx-auto" id="mission">
+    <span class="mx-auto">
       <svg
         width="26"
         height="105"
@@ -45,7 +47,9 @@ import MissionDetailItems from "./MissionDetailItems.astro";
           fill="#96F50A"></path></svg
       >
     </span>
-    <h3 class="font-bold text-3xl md:text-[32px] leading-[32px]">Notre mission ?</h3>
+    <h3 class="font-bold text-3xl md:text-[32px] leading-[32px]">
+      Notre mission ?
+    </h3>
     <h2 class="font-bold text-4xl md:text-[40px] leading-[1.5]">
       <span class="text-[#96F50A]">Eco-concevoir</span> dès maintenant avec nos clients
       le <span class="text-[#96F50A]">numérique de demain</span>.
@@ -70,9 +74,18 @@ import MissionDetailItems from "./MissionDetailItems.astro";
         <circle cx="13" cy="91.5562" r="12.5" fill="#96F50A"></circle>
       </svg>
     </span>
-    <h2 id="solution" class="text-4xl leading-[1.5] md:text-[50px] md:leading-[75px] font-bold">
+  </div>
+</section>
+<section class="bg-[#243946] pb-10 md:pb-24 px-4" id="solution">
+  <div
+    class="xl:max-w-[1015px] container mx-auto text-center flex flex-col text-white gap-16"
+  >
+    <h2
+      id="solution"
+      class="text-4xl leading-[1.5] md:text-[50px] md:leading-[75px] font-bold"
+    >
       Découvrez l'ensemble de nos <span class="text-[#96F50A]">solutions</span> d'accompagnement.
     </h2>
-    <MissionDetailItems/>
+    <MissionDetailItems />
   </div>
 </section>

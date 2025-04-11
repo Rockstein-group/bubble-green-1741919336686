@@ -10,7 +10,8 @@ import SimonCardon from "../components/home/SimonCardon.astro";
 
 const seo = {
   title: "Bubble Green - Solutions Numériques Écoresponsables & Performantes",
-  description: "Bubble Green propose des solutions numériques écoresponsables et performantes pour un web durable. Optez pour une technologie plus verte dès aujourd'hui !",
+  description:
+    "Bubble Green propose des solutions numériques écoresponsables et performantes pour un web durable. Optez pour une technologie plus verte dès aujourd'hui !",
   keywords: "greenit, sustainable",
   canonical: "https://bubble-green-1741919336686.ecobuilder.io",
   image: "/images/gii_logo_seo.webp",
@@ -20,11 +21,16 @@ const seo = {
 ---
 
 <html lang="en" class="overflow-x-hidden scroll-smooth scroll-pt-24">
-  <Head seo={seo} title="Bubble Green - Solutions Numériques Écoresponsables & Performantes" />
+  <Head
+    seo={seo}
+    title="Bubble Green - Solutions Numériques Écoresponsables & Performantes"
+  />
   <MainLayout>
-    <Banner />
-    <Statistic />
-    <Missions/>
+    <section id="vision">
+      <Banner />
+      <Statistic />
+    </section>
+    <Missions />
     <Result />
     <SimonCardon />
   </MainLayout>

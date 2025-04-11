@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import "../styles/global.css";
-import { fr_flag, logo_bubble_green, uk_flag } from "../generated/images";
+import { fr_flag, logo_bubble_green, uk_flag_2 } from "../generated/images";
 const { contactHref, redirectUrl } = Astro.props;
 ---
 
@@ -13,6 +13,10 @@ const { contactHref, redirectUrl } = Astro.props;
     éco-conçu !</a>
   </div>
 </div>
+
+<!-- Hidden Google Translate Element -->
+<div id="google_translate_element" class="hidden"></div>
+
 <header class="sticky top-0 z-50">
   <div class="mx-auto bg-[#243946] px-4">
     <div class="container mx-auto">
@@ -37,21 +41,24 @@ const { contactHref, redirectUrl } = Astro.props;
         <div class="flex items-center justify-end space-x-4 xl:min-w-[305.8px]">
           <a
             href={contactHref}
-            class="bg-[#96F50A] hidden lg:inline-flex px-2.5 sm:px-4 py-2.5 rounded-full hover:bg-[#96F50A] font-semibold text-xs sm:text-sm whitespace-nowrap"
+            class="bg-[#96F50A] hidden lg:inline-flex px-4 py-2.5 rounded-full hover:bg-[#96F50A] font-semibold text-xs sm:text-sm whitespace-nowrap"
             >Contact</a
           >
-          <details class="relative inline-block text-left">
+          <details class="relative inline-block text-left language-switcher">
             <summary
+              id="language-summary"
               class="flex items-center gap-2 px-3 py-2.5 min-h-10 bg-[#2D2D2D] text-white rounded-lg cursor-pointer"
             >
-              <span>
+              <span id="current-flag">
                 <Image
                   src={fr_flag}
                   alt="French Flag"
                   width={22}
                   height={16}
+                  id="current-flag-img"
                 />
               </span>
+              <span id="current-lang" class="text-sm notranslate">FR</span>
               <svg
                 class="w-4 h-4"
                 xmlns="http://www.w3.org/2000/svg"
@@ -68,15 +75,28 @@ const { contactHref, redirectUrl } = Astro.props;
               class="absolute left-0 mt-2 bg-white border border-gray-300 rounded-lg shadow-lg z-10 min-w-20"
             >
               <li
+                id="fr-option"
                 class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer gap-2 text-sm rounded-lg"
               >
                 <Image
-                  src={uk_flag}
+                  src={fr_flag}
+                  alt="French Flag"
+                  width={22}
+                  height={16}
+                />
+                <span class="text-sm notranslate">FR</span>
+              </li>
+              <li
+                id="en-option"
+                class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer gap-2 text-sm rounded-lg"
+              >
+                <Image
+                  src={uk_flag_2}
                   alt="United Kingdom Flag"
                   width={22}
                   height={16}
                 />
-                <span>EN</span>
+                <span class="text-sm notranslate">EN</span>
               </li>
             </ul>
           </details>
@@ -85,3 +105,167 @@ const { contactHref, redirectUrl } = Astro.props;
     </div>
   </div>
 </header>
+
+<!-- Google Translate Script -->
+<script type="text/javascript">
+  // Initialize the language state
+  let currentLanguage = "fr"; // Default language is French
+
+  // Function to load Google Translate script
+  function loadGoogleTranslate() {
+    const script = document.createElement("script");
+    script.src =
+      "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    document.body.appendChild(script);
+  }
+
+  // Initialize Google Translate
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: "fr",
+        includedLanguages: "en,fr",
+        autoDisplay: false,
+      },
+      "google_translate_element"
+    );
+
+    // Hide Google Translate widget after initialization
+    setTimeout(hideGoogleTranslateBar, 1000);
+  }
+
+  // Hide Google Translate bar
+  function hideGoogleTranslateBar() {
+    const iframe = document.querySelector(".goog-te-banner-frame");
+    if (iframe) {
+      iframe.style.display = "none";
+    }
+
+    // Remove the added top margin
+    document.body.style.top = "0px";
+  }
+
+  // Set a cookie
+  function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    const expires = "; expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + expires + "; path=/";
+  }
+
+  // Get a cookie
+  function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(";");
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) === " ") c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+
+  // Switch to English
+  function switchToEnglish() {
+    const selectElement = document.querySelector(".goog-te-combo");
+    if (selectElement) {
+      selectElement.value = "en";
+      selectElement.dispatchEvent(new Event("change"));
+    }
+
+    // Update language state
+    currentLanguage = "en";
+    setCookie("siteLanguage", "en", 30);
+    
+    // Update the main dropdown display
+    document.getElementById("current-lang").textContent = "EN";
+    
+    // Update the flag image
+    document.getElementById("current-flag-img").src = "/images/uk_flag_2.svg";
+    
+    // Close the dropdown
+    document.querySelector("details.language-switcher").removeAttribute("open");
+  }
+
+  // Switch to French
+  function switchToFrench() {
+    // Remove the Google translate modifications
+    document.cookie =
+      "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie =
+      "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." +
+      document.domain +
+      ";";
+    document.cookie =
+      "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." +
+      location.hostname.split(".").slice(-2).join(".") +
+      ";";
+
+    // Update language state
+    currentLanguage = "fr";
+    setCookie("siteLanguage", "fr", 30);
+    
+    // Update the main dropdown display
+    document.getElementById("current-lang").textContent = "FR";
+    
+    // Update the flag image
+    document.getElementById("current-flag-img").src = "/images/fr_flag.svg";
+    
+    // Close the dropdown
+    document.querySelector("details.language-switcher").removeAttribute("open");
+    
+    // Reload the page to ensure we're back to French
+    window.location.reload();
+  }
+
+  // Add event listeners for language selection
+  document.addEventListener("DOMContentLoaded", function () {
+    // Check if there's a saved language preference
+    const savedLanguage = getCookie("siteLanguage");
+    if (savedLanguage) {
+      currentLanguage = savedLanguage;
+      
+      // Update the displayed language in dropdown
+      document.getElementById("current-lang").textContent = savedLanguage.toUpperCase();
+      
+      // Update the flag image based on saved language
+      if (savedLanguage === "en") {
+        document.getElementById("current-flag-img").src = "/images/uk_flag_2.svg";
+      } else {
+        document.getElementById("current-flag-img").src = "/images/fr_flag.svg";
+      }
+      
+      // If English was selected previously, apply translation on page load
+      if (savedLanguage === "en") {
+        // We'll need to wait for Google Translate to initialize
+        const checkTranslateInterval = setInterval(() => {
+          const selectElement = document.querySelector(".goog-te-combo");
+          if (selectElement) {
+            clearInterval(checkTranslateInterval);
+            selectElement.value = "en";
+            selectElement.dispatchEvent(new Event("change"));
+          }
+        }, 200);
+        
+        // Clear interval after 5 seconds if Google Translate hasn't loaded
+        setTimeout(() => clearInterval(checkTranslateInterval), 5000);
+      }
+    }
+
+    // Load Google Translate
+    loadGoogleTranslate();
+
+    // Add event listeners to language options
+    document.getElementById("en-option").addEventListener("click", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      switchToEnglish();
+    });
+    
+    document.getElementById("fr-option").addEventListener("click", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      switchToFrench();
+    });
+  });
+</script>
