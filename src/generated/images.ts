@@ -20,6 +20,7 @@ export const home_banner_2 = "/images/home_banner_2.svg";
 export const home_banner_old = "/images/home_banner_old.svg";
 export const home_banner_old_2 = "/images/home_banner_old_2.svg";
 export const home_bottom_decor = "/images/home_bottom_decor.svg";
+export const home_contact_img = "/images/home_contact_img.svg";
 export const icon_flag = "/images/icon_flag.svg";
 export const logo_akoa = "/images/logo_akoa.webp";
 export const logo_bubble_green = "/images/logo_bubble_green.svg";

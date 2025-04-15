@@ -1,30 +1,37 @@
 ---
 import { Image } from "astro:assets";
 import ContactForm from "./ContactForm.astro";
-import { simon_cardon_dirigeant } from "../../generated/images";
+import { home_contact_img, simon_cardon_dirigeant } from "../../generated/images";
 ---
 <section class="py-10 md:pt-24 md:pb-44 bg-[#243946] relative px-4" id="contact">
   <lazy-load>
     <div
       class="container mx-auto text-white flex flex-col items-start lg:flex-row lg:gap-20"
     >
-      <div class="flex flex-col gap-8">
+      <div class="flex flex-col gap-12">
         <div class="flex flex-col gap-10">
-          <h2
+          <!-- <h2
             class="text-4xl leading-[1.5] md:text-[50px] md:leading-[75px] font-bold"
           >
             <span class="text-[#96F50A]">Simon Cardon</span> est notre fer de lance!
-          </h2>
-          <p class="text-[25px] leading-snug">
+          </h2> -->
+          <!-- <h2 class="text-3xl !leading-[1.5] md:text-4xl font-bold">
             Il oeuvre pour un numérique plus éthique, souverain et écologique
             depuis plus de 9 ans.
-          </p>
-          <p class="text-[25px] leading-snug">Notre équipe d'experts est là pour vous accompagner, n'hésitez pas à les contacter. !</p>
+          </h2> -->
+          <h2 class="text-4xl leading-[1.5] md:text-[50px] md:leading-[75px] font-bold">Notre équipe d'experts est là pour vous accompagner, n'hésitez pas à les contacter. !</h2>
         </div>
-        <Image
+        <!-- <Image
           src={simon_cardon_dirigeant}
           alt="Simon Cardon"
           class="relative md:mx-auto lg:mx-0 lg:absolute bottom-0"
+          width={425}
+          height={647.52}
+        /> -->
+        <Image
+          src={home_contact_img}
+          alt="Contact"
+          class="relative md:mx-auto lg:mx-0 w-full md:w-[90%]"
           width={425}
           height={647.52}
         />
