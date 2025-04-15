@@ -46,5 +46,6 @@ export const nav_mobile_solution_icon_active = "/images/nav-mobile-solution-icon
 export const nav_mobile_solution_icon = "/images/nav-mobile-solution-icon.svg";
 export const result_img = "/images/result_img.svg";
 export const simon_cardon_dirigeant = "/images/simon-cardon-dirigeant.webp";
+export const simon_contact_img = "/images/simon-contact-img.webp";
 export const uk_flag = "/images/uk_flag.svg";
 export const uk_flag_2 = "/images/uk_flag_2.svg";
