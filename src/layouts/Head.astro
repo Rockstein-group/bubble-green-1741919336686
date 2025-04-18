@@ -148,7 +148,7 @@ const finalTitle = title ?? seo.title;
           e.preventDefault();
           const formData = new FormData(e.target);
           const formObject = Object.fromEntries(formData);
-          formObject.emailUser = "hello@bubble-green.ch";
+          formObject.emailUser = "contact@bubble-greeen.com";
           console.log("formObject", formObject);
           try {
             const response = await fetch(
@@ -176,5 +176,37 @@ const finalTitle = title ?? seo.title;
         });
       });
     })();
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const homeBannerImg = document.getElementById("home-banner-img");
+  
+      // Function to update the banner image based on language
+      function updateBannerImage(language) {
+        if (language === "en") {
+          homeBannerImg.src = "/images/home_banner_eng.svg";
+        } else {
+          homeBannerImg.src = "/images/home_banner.svg";
+        }
+      }
+  
+      // Check the current language from the cookie
+      const savedLanguage = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("siteLanguage="))
+        ?.split("=")[1];
+  
+      // Set the initial banner image
+      updateBannerImage(savedLanguage || "fr");
+  
+      // Add event listeners for language changes
+      document.getElementById("en-option").addEventListener("click", function () {
+        updateBannerImage("en");
+      });
+  
+      document.getElementById("fr-option").addEventListener("click", function () {
+        updateBannerImage("fr");
+      });
+    });
   </script>
 </head>

@@ -17,6 +17,7 @@ export const engagement_image_2 = "/images/engagement_image_2.svg";
 export const fr_flag = "/images/fr_flag.svg";
 export const home_banner = "/images/home_banner.svg";
 export const home_banner_2 = "/images/home_banner_2.svg";
+export const home_banner_eng = "/images/home_banner_eng.svg";
 export const home_banner_old = "/images/home_banner_old.svg";
 export const home_banner_old_2 = "/images/home_banner_old_2.svg";
 export const home_bottom_decor = "/images/home_bottom_decor.svg";
