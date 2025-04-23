@@ -269,3 +269,63 @@ const { contactHref, redirectUrl } = Astro.props;
     });
   });
 </script>
+
+<script>
+  // Function to apply custom translations
+  function applyCustomTranslations() {
+    // Get all elements with custom translations
+    const elementsWithCustomTranslation = document.querySelectorAll('[data-custom-html-translate]');
+    
+    // Get current language
+    const currentLanguage = document.cookie.includes('siteLanguage=en') ? 'en' : 'fr';
+    
+    // Apply translations based on current language
+    elementsWithCustomTranslation.forEach(element => {
+      if (currentLanguage === 'en') {
+        // Save original content if not already saved
+        if (!element.getAttribute('data-original-content')) {
+          element.setAttribute('data-original-content', element.innerHTML);
+        }
+        
+        // Apply custom English translation
+        // We need to preserve the styling spans for colored words
+        if (element.classList.contains('custom-text-translate')) {
+          // This targets our specific h1 
+          const customText = element.getAttribute('data-custom-html-translate');
+          if (customText) {
+            element.innerHTML = customText;
+            // Tell Google Translate to ignore this element
+            element.classList.add('notranslate');
+          }
+        }
+      } else {
+        // Restore original French content if we saved it
+        if (element.getAttribute('data-original-content')) {
+          element.innerHTML = element.getAttribute('data-original-content');
+          element.classList.remove('notranslate');
+        }
+      }
+    });
+  }
+
+  // Apply custom translations when language changes
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initial application
+    applyCustomTranslations();
+    
+    // Listen for language changes
+    const originalSwitchToEnglish = window.switchToEnglish;
+    const originalSwitchToFrench = window.switchToFrench;
+    
+    // Override the language switch functions to include our custom translations
+    window.switchToEnglish = function() {
+      originalSwitchToEnglish();
+      setTimeout(applyCustomTranslations, 300); // Apply after Google Translate has time to run
+    };
+    
+    window.switchToFrench = function() {
+      originalSwitchToFrench();
+      setTimeout(applyCustomTranslations, 300);
+    };
+  });
+</script>
