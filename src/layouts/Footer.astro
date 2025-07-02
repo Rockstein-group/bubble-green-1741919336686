@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import "../styles/global.css";
-import { logo_digital_forst_certificate, logo_green_hosting, logo_powered_by_bubble_go } from "../generated/images";
+import { badge, logo_digital_forst_certificate, logo_green_hosting, logo_powered_by_bubble_go } from "../generated/images";
 ---
 
 <footer class="bg-[#22252a] px-4 pb-20 lg:pb-0">
@@ -29,8 +29,9 @@ import { logo_digital_forst_certificate, logo_green_hosting, logo_powered_by_bub
               height={66}
             />
             <Image
-              src={logo_green_hosting}
+              src={badge}
               alt="Green Hosting Logo"
+              class="rounded"
               width={136}
               height={65}
             />

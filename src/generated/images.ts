@@ -1,3 +1,5 @@
+export const badge = "/images/badge.webp";
+export const bb_green_seo = "/images/bb_green_seo.png";
 export const campain_carousel_1 = "/images/campain_carousel_1.webp";
 export const campain_carousel_2 = "/images/campain_carousel_2.webp";
 export const campain_carousel_3 = "/images/campain_carousel_3.webp";
