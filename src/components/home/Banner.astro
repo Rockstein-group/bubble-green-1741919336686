@@ -2,31 +2,67 @@
 import { Image } from "astro:assets";
 import { home_banner, home_bottom_decor } from "../../generated/images";
 ---
-<section class="bg-[#243946] pt-10 pb-28 md:pt-28 md:pb-44 lg:pb-96 relative px-4">
-  <div class="container mx-auto text-center flex flex-col text-white gap-14 md:gap-24">
-    <h1 class="custom-text-translate text-4xl leading-[1.5] md:text-6xl md:leading-[84px] font-bold" data-custom-html-translate=`We strive for a more <span class="text-[#96f509]">ethical</span>, <span class="text-[#96f509]">sovereign</span>, and <span class="text-[#96f509]">environmentally sustainable</span> digital future...`>Nous oeuvrons pour un numérique plus <span class="text-[#96f509]">éthique</span>, <span class="text-[#96f509]">souverain</span> et <span class="text-[#96f509]">écologique</span>...</h1>
+
+<section
+  class="bg-[#243946] pt-10 pb-28 md:pt-28 md:pb-44 lg:pb-96 relative px-4"
+>
+  <div
+    class="container mx-auto text-center flex flex-col text-white gap-14 md:gap-24"
+  >
+    <h1
+      class="custom-text-translate text-4xl leading-[1.5] md:text-6xl md:leading-[84px] font-bold"
+      data-custom-html-translate=`We strive for a more <span class="text-[#96f509]">ethical</span>, <span class="text-[#96f509]">sovereign</span>, and <span class="text-[#96f509]">environmentally sustainable</span> digital future...`
+    >
+      Nous oeuvrons pour un numérique plus <span class="text-[#96f509]"
+        >éthique</span
+      >, <span class="text-[#96f509]">souverain</span> et <span
+        class="text-[#96f509]">écologique</span
+      >...
+    </h1>
     <span class="mx-auto">
-      <svg width="26" height="105" viewBox="0 0 26 105" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <line x1="13.5" y1="1.05621" x2="13.5" y2="91.0562" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="10 10"/>
-        <circle cx="13" cy="91.5562" r="12.5" fill="#96F50A"/>
-        </svg>
+      <svg
+        width="26"
+        height="105"
+        viewBox="0 0 26 105"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="13.5"
+          y1="1.05621"
+          x2="13.5"
+          y2="91.0562"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-dasharray="10 10"></line>
+        <circle cx="13" cy="91.5562" r="12.5" fill="#96F50A"></circle>
+      </svg>
     </span>
-    <h2 class="font-bold text-3xl leading-[1.5] md:text-[40px] md:leading-[40px]">Car l'empreinte du numérique explose... </h2>
-    <Image
-      id="home-banner-img" 
-      src={home_banner}
-      alt="Home Banner"
-      width={890}
-      height={256}
-      class="mx-auto"
-      loading="eager"
-    />
+    <h2
+      class="font-bold text-3xl leading-[1.5] md:text-[40px] md:leading-[40px]"
+    >
+      Car l'empreinte du numérique explose...
+    </h2>
+    <lazy-load>
+      <Image
+        id="home-banner-img"
+        src={home_banner}
+        alt="Home Banner"
+        width={890}
+        height={256}
+        class="mx-auto"
+        loading="eager"
+      />
+    </lazy-load>
   </div>
-  <Image 
+  <lazy-load>
+    <Image
       src={home_bottom_decor}
       alt="Home Banner"
       width={1440}
       height={373}
       class="mx-auto w-full absolute -bottom-[3px] left-0 right-0"
     />
+  </lazy-load>
 </section>
